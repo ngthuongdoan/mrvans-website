@@ -6,19 +6,44 @@
       <button>ORDER NOW</button>
       <br />
       <!-- routerlink  -->
-      <a>Ngó sang menu chúng mình nhé...</a>
+      <a href="#">Ngó sang menu chúng mình nhé...</a>
     </section>
-    <div class="slideshow-container"></div>
-    <div style="text-align:center">
-      <span class="dot" onclick="currentSlide(1)"></span>
-      <span class="dot" onclick="currentSlide(2)"></span>
-      <span class="dot" onclick="currentSlide(3)"></span>
+    <div class="slider">
+      <img src="../assets/icons/arrow.png" alt id="left-arrow" />
+      <div class="image-wrapper">
+        <div id="image-container">
+          <img src="../assets/1.jpg" alt style="width:100%" />
+          <img src="../assets/2.jpg" alt style="width:100%" />
+          <img src="../assets/3.jpg" alt style="width:100%" />
+        </div>
+      </div>
+      <img src="../assets/icons/arrow.png" alt id="right-arrow" />
     </div>
   </div>
 </template>
 
 <script>
-export default {  
+export default {
+  mounted() {
+    $(() => {
+      $("#image-container").slick({
+        dots: true,
+        appendDots: ".image-wrapper",
+        nextArrow: `#right-arrow`,
+        prevArrow: `#left-arrow`,
+        slidesToShow: 1,
+        autoplay: true,
+        autoplaySpeed: 2000,
+        fade: true,
+        cssEase: "linear"
+      });
+      $(".slick-dots").css("position", "relative");
+      $(".slick-dots").css("bottom", "0");
+      $(".slick-dots li.slick-active button:before").css("color","yellow");
+      $(".slick-dots li button:before").css("font-size","1rem");
+      $(".slick-dots li button:before").css("opacity","1");
+    });
+  }
 };
 </script>
 
