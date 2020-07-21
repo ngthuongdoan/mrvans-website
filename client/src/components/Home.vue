@@ -8,7 +8,7 @@
       <!-- routerlink  -->
       <a href="#">Ngó sang menu chúng mình nhé...</a>
     </section>
-    <div class="slider">
+    <div class="slider mobile">
       <img src="../assets/icons/arrow.png" alt id="left-arrow" />
       <div class="image-wrapper">
         <div id="image-container">
@@ -25,23 +25,14 @@
 <script>
 export default {
   mounted() {
-    $(() => {
-      $("#image-container").slick({
-        dots: true,
-        appendDots: ".image-wrapper",
-        nextArrow: `#right-arrow`,
-        prevArrow: `#left-arrow`,
-        slidesToShow: 1,
-        autoplay: true,
-        autoplaySpeed: 2000,
-        fade: true,
-        cssEase: "linear"
-      });
-      $(".slick-dots").css("position", "relative");
-      $(".slick-dots").css("bottom", "0");
-      $(".slick-dots li.slick-active button:before").css("color","yellow");
-      $(".slick-dots li button:before").css("font-size","1rem");
-      $(".slick-dots li button:before").css("opacity","1");
+    $("#image-container").slick({
+      nextArrow: "#right-arrow",
+      prevArrow: "#left-arrow",
+      slidesToShow: 1,
+      autoplay: true,
+      autoplaySpeed: 2000,
+      fade: true,
+      cssEase: "linear"
     });
   }
 };

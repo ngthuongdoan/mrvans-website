@@ -1,10 +1,10 @@
 <template>
   <div id="header">
     <img id="logo" src="../assets/logo.svg" alt />
-    <nav>
+    <nav class="mobile">
       <li v-for="link in navLinks" :key="link">{{ link }}</li>
     </nav>
-    <ul>
+    <ul class="mobile">
       <li>
         <ion-icon name="logo-facebook"></ion-icon>
       </li>
