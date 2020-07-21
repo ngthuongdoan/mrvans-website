@@ -11,13 +11,13 @@
   margin: 20vh 10vw;
   color: #fafafa;
   h1 {
-    font-size: 40px;
+    font-size:3vw;
     font-weight: bold;
     text-shadow: 2px 2px 11px #000000;
   }
   p {
     margin-top: 10px;
-    font-size: 16px;
+    font-size: 1vw;
     font-style: italic;
   }
   button {
@@ -39,7 +39,7 @@
   a {
     color: white;
     font-weight: bold;
-    font-size: 14px;
+    font-size: 1vw;
     font-style: italic;
   }
 }
@@ -76,5 +76,52 @@
 #image-container {
   img {
     border: 5px solid white;
+  }
+}
+
+@media screen and (max-width: 770px) {
+  .mobile {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  #slogan {
+    display: block;
+    width: 80%;
+    margin: 20vh 10vw;
+    color: #fafafa;
+    h1 {
+      font-size:30px;
+      font-weight: bold;
+      text-shadow: 2px 2px 11px #000000;
+    }
+    p {
+      margin-top: 10px;
+      font-size: 13px;
+      font-style: italic;
+    }
+    button {
+      margin-top: 30px;
+      margin-bottom: 10px;
+      width: 150px;
+      height: 60px;
+      color: white;
+      font-weight: bold;
+      background-color: #841818;
+      border-radius: 10px;
+      border: none;
+      cursor: pointer;
+      transition: all 0.3s ease-in-out;
+      &:hover {
+        background-color: #611a1a;
+      }
+    }
+    a {
+      color: white;
+      font-weight: bold;
+      font-size: 11px;
+      font-style: italic;
+    }
   }
 }
