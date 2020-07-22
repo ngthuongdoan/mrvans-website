@@ -1,5 +1,6 @@
 #header {
   display: grid;
+  position: fixed;
   grid-template-columns: 1fr 5fr 1fr;
   grid-template-rows: 1fr;
   width: 100%;
@@ -14,11 +15,14 @@
   margin-top: 10px;
   justify-self: right;
 }
+
 nav {
+  overflow: hidden;
   list-style: none;
   height: 100%;
   text-align: center;
   li {
+    position: relative;
     cursor: pointer;
     display: inline-block;
     padding: 20px;
@@ -28,8 +32,36 @@ nav {
     &:hover {
       background-color: #ffd110;
     }
+    a {
+      text-decoration: none;
+      color: black;
+      display: block;
+    }
   }
 }
+
+.dropdowncontent {
+  display: none;
+  background-color: white;
+  position: fixed;
+  width: max-content;
+  height: fit-content;
+  transform: translate(85%, -5%);
+  z-index: 100;
+  li {
+    width: 100%;
+    margin: 0;
+    padding: 20px;
+    border: none;
+  }
+}
+
+.dropdown:hover {
+  .dropdowncontent {
+    display: block;
+  }
+}
+
 ul {
   list-style: none;
   text-align: center;
@@ -43,21 +75,46 @@ ul {
     }
   }
 }
-@media screen and (max-width: 930px) {
-  .mobile {
+.mobile {
+  display: none;
+}
+
+.hamburger-wrapper {
+  position: fixed;
+  right: 20px;
+  top: 5px;
+  li {
+    width: 30px;
+    height: 5px;
+    background-color: black;
+    border-radius: 20px;
+    display: block;
+    margin: 3px 0;
+    opacity: 0.8;
+  }
+}
+
+#hamburger-content {
+  display: none;
+}
+@media screen and (max-width: 950px) {
+  .desktop {
     display: none;
+  }
+  .mobile {
+    display: block;
   }
   #header {
     height: 40px;
   }
-  #logo{
-  margin-top: 0px;
+  #logo {
+    margin-top: 0px;
     width: 60px;
   }
 }
 
 @media screen and (max-width: 600px) {
-  #logo{
+  #logo {
     margin-left: 10px;
-    }
+  }
 }
