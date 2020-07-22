@@ -8,7 +8,7 @@
       <!-- routerlink  -->
       <a href="#">Ngó sang menu chúng mình nhé...</a>
     </section>
-    <div class="slider mobile">
+    <div class="slider desktop">
       <img src="../assets/icons/arrow.png" alt id="left-arrow" />
       <div class="image-wrapper">
         <div id="image-container">
