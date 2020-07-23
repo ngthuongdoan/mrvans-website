@@ -27,7 +27,6 @@ nav {
     display: inline-block;
     padding: 20px;
     margin: 0;
-    margin-left: 20px;
     transition: all 0.3s ease-in-out;
     &:hover {
       background-color: #ffd110;
@@ -41,13 +40,11 @@ nav {
 }
 
 .dropdowncontent {
-  display: none;
   background-color: white;
   position: fixed;
   width: max-content;
   height: fit-content;
-  transform: translate(85%, -5%);
-  z-index: 100;
+  transform: translate(65%, -5%);
   li {
     width: 100%;
     margin: 0;
@@ -56,11 +53,11 @@ nav {
   }
 }
 
-.dropdown:hover {
-  .dropdowncontent {
-    display: block;
-  }
-}
+// .dropdown:hover {
+//   .dropdowncontent {
+//     display: block;
+//   }
+// }
 
 ul {
   list-style: none;
@@ -80,9 +77,11 @@ ul {
 }
 
 .hamburger-wrapper {
+  cursor: pointer;
   position: fixed;
   right: 20px;
   top: 5px;
+  height: fit-content;
   li {
     width: 30px;
     height: 5px;
@@ -93,7 +92,10 @@ ul {
     opacity: 0.8;
   }
 }
+.hamburger{
+  cursor: pointer;
 
+}
 #hamburger-content {
   display: none;
 }

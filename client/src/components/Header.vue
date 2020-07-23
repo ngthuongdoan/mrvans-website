@@ -1,25 +1,25 @@
 <template>
   <div id="header">
-    <img id="logo" src="../assets/logo.svg" alt />
+    <img @click="componentName='app-home'" id="logo" src="../assets/logo.svg" alt />
     <nav class="desktop">
-      <li>
-        <a href="#home">TRANG CHỦ</a>
+      <li @click="componentName='app-home'">
+        <a >TRANG CHỦ</a>
       </li>
-      <li class="dropdown">MENU</li>
-      <ul class="dropdowncontent">
-        <li>
-          <a href="#today-menu">THỰC ĐƠN HÔM NAY</a>
+      <li class="dropdown" @mouseenter="dropdownHover=!dropdownHover" @click="componentName='app-menu-today'">MENU</li>
+      <ul class="dropdowncontent" v-if="dropdownHover" @mouseleave="dropdownHover=!dropdownHover">
+        <li @click="componentName='app-menu-today'">
+          <a>THỰC ĐƠN HÔM NAY</a>
         </li>
         <br />
-        <li>
-          <a href="#tomorrow-menu">THỰC ĐƠN NGÀY MAI</a>
+        <li @click="componentName='app-menu-tomorrow'">
+          <a>THỰC ĐƠN NGÀY MAI</a>
         </li>
       </ul>
-      <li>
-        <a href="#whyus">VÌ SAO CHỌN CHÚNG TÔI</a>
+      <li @click="componentName='app-whyus'">
+        <a>VÌ SAO CHỌN CHÚNG TÔI</a>
       </li>
-      <li>
-        <a href="#contact">LIÊN HỆ</a>
+      <li @click="componentName='app-contact'">
+        <a>LIÊN HỆ</a>
       </li>
     </nav>
     <ul class="desktop">
@@ -39,30 +39,30 @@
         <li></li>
         <li></li>
       </ul>
-      <app-navbar v-if="hamburgerClicked"></app-navbar>
+      <app-navbar style="z-index:1000" v-if="hamburgerClicked"></app-navbar>
     </div>
   </div>
 </template>
 
 <script>
 import AppNavbar from "./Navbar.vue";
+import { eventBus } from "../main";
 export default {
   data() {
     return {
-      hamburgerClicked: false
+      hamburgerClicked: false,
+      dropdownHover: false,
+      componentName: "app-home",
     };
+  },
+  watch: {
+    componentName(){
+      eventBus.$emit("pageChanged", this.componentName);
+    }
   },
   components: {
     AppNavbar
   },
-  mounted() {
-    $(".dropdown").on("mouseover", () => {
-      $(".dropdowncontent").css("display", "block");
-    });
-    $(".dropdown + .dropdowncontent").on("mouseleave", () => {
-      $(".dropdowncontent").css("display", "none");
-    });
-  }
 };
 </script>
 

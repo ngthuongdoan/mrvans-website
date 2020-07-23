@@ -1,30 +1,43 @@
 <template>
   <div class="hamburger-content">
     <ul>
-      <li>
-        <a href="#home">TRANG CHỦ</a>
+      <li @click="componentName='app-home'">
+        <a>TRANG CHỦ</a>
       </li>
-      <li class="dropdown">MENU</li>
+      <li @click="componentName='app-menu-today'" class="dropdown">MENU</li>
       <ul class="dropdowncontent">
-        <li>
-          <a href="#today-menu">THỰC ĐƠN HÔM NAY</a>
+        <li @click="componentName='app-menu-today'">
+          <a>THỰC ĐƠN HÔM NAY</a>
         </li>
-        <li>
-          <a href="#tomorrow-menu">THỰC ĐƠN NGÀY MAI</a>
+        <li @click="componentName='app-menu-tomorrow'">
+          <a>THỰC ĐƠN NGÀY MAI</a>
         </li>
       </ul>
-      <li>
-        <a href="#whyus">VÌ SAO CHỌN CHÚNG TÔI</a>
+      <li @click="componentName='app-whyus'">
+        <a>VÌ SAO CHỌN CHÚNG TÔI</a>
       </li>
-      <li>
-        <a href="#contact">LIÊN HỆ</a>
+      <li @click="componentName='app-contact'">
+        <a>LIÊN HỆ</a>
       </li>
     </ul>
   </div>
 </template>
 
 <script>
-export default {};
+import { eventBus } from "../main";
+
+export default {
+    data() {
+    return {
+      componentName: "app-home",
+    };
+  },
+  watch: {
+    componentName(){
+      eventBus.$emit("pageChanged", this.componentName);
+    }
+  },
+};
 </script>
 
 <style lang="scss">
