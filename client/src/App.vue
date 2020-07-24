@@ -2,14 +2,12 @@
   <div id="app">
     <app-header></app-header>
     <component :is="componentId"></component>
-    <app-footer></app-footer>
   </div>
 </template>
 
 
 <script>
 import AppHeader from "./components/Header.vue";
-import AppFooter from "./components/Footer.vue";
 import AppHome from "./components/Home.vue";
 import AppMenuToday from "./components/MenuToday.vue";
 import AppMenuTomorrow from "./components/MenuTomorrow.vue";
@@ -34,7 +32,6 @@ export default {
   components: {
     AppHeader,
     AppHome,
-    AppFooter,
     AppMenuToday,
     AppMenuTomorrow,
     AppWhyus,
@@ -44,5 +41,5 @@ export default {
 </script>
 
 <style lang="scss">
-@import "../static/App.scss";
+@import "./styles/App.scss";
 </style>

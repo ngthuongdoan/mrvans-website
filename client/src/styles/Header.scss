@@ -8,6 +8,7 @@
   justify-items: center;
   overflow: hidden;
   background-color: white;
+  z-index: 9999 !important;
 }
 #logo {
   width: 100px;
@@ -53,11 +54,9 @@ nav {
   }
 }
 
-// .dropdown:hover {
-//   .dropdowncontent {
-//     display: block;
-//   }
-// }
+#productcontent{
+  transform: translate(167%, -5%);
+}
 
 ul {
   list-style: none;

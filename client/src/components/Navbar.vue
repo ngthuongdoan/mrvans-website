@@ -43,7 +43,7 @@ export default {
 <style lang="scss">
 .hamburger-content {
   background-color: white;
-  z-index: 100;
+  z-index: 100 !important;
   position: fixed;
   right: 0;
   ul {

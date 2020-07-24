@@ -45,6 +45,7 @@
   }
 }
 .slider {
+  position: relative;
   display: grid;
   grid-template-columns: 1fr 2fr 1fr;
   grid-template-rows: 1fr;
@@ -54,6 +55,7 @@
   width: 100%;
   height: 100%;
   margin-top: 20px;
+  z-index: 0;
 }
 #right-arrow,
 #left-arrow {
@@ -68,6 +70,7 @@
   justify-self: right;
 }
 .image-wrapper {
+  position: relative;
   overflow: hidden;
   width: 100%;
 }
@@ -82,9 +85,13 @@ z-index: -111;
   display: none;
 }
 
-@media screen and (max-width: 950px) {
-  .slider {display: none;}
-
+@media screen and (max-height: 520px) {
+  .desktop {
+    display: none;
+  }
+  .mobile {
+    display: block;
+  }
 }
 @media screen and (max-width: 770px) {
   .desktop {

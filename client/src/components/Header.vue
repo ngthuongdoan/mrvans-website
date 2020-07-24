@@ -3,16 +3,47 @@
     <img @click="componentName='app-home'" id="logo" src="../assets/logo.svg" alt />
     <nav class="desktop">
       <li @click="componentName='app-home'">
-        <a >TRANG CHỦ</a>
+        <a>TRANG CHỦ</a>
       </li>
-      <li class="dropdown" @mouseenter="dropdownHover=!dropdownHover" @click="componentName='app-menu-today'">MENU</li>
-      <ul class="dropdowncontent" v-if="dropdownHover" @mouseleave="dropdownHover=!dropdownHover">
+      <li
+        class="dropdown"
+        @mouseenter="menuHover = true"
+        @mouseleave="menuHover = false"
+        @click="componentName='app-menu-today'"
+      >MENU</li>
+      <ul
+        class="dropdowncontent"
+        v-if="turnOnMenuHover"
+        @mouseenter="menuChildHover = true"
+        @mouseleave="menuChildHover = false"
+      >
         <li @click="componentName='app-menu-today'">
           <a>THỰC ĐƠN HÔM NAY</a>
         </li>
         <br />
         <li @click="componentName='app-menu-tomorrow'">
           <a>THỰC ĐƠN NGÀY MAI</a>
+        </li>
+      </ul>
+      <li
+        class="dropdown"
+        @mouseenter="productHover=true"
+        @mouseleave="productHover = false"
+        @click="componentName='app-product'"
+      >SẢN PHẨM</li>
+      <ul
+        class="dropdowncontent"
+        id="productcontent"
+        v-if="turnOnProductHover"
+        @mouseenter="productChildHover=true"
+        @mouseleave="productChildHover = false"
+      >
+        <li @click="componentName='app-product-1'">
+          <a>SẢN PHẨM 1</a>
+        </li>
+        <br />
+        <li @click="componentName='app-product-2'">
+          <a>SẢN PHẨM 2</a>
         </li>
       </ul>
       <li @click="componentName='app-whyus'">
@@ -51,21 +82,32 @@ export default {
   data() {
     return {
       hamburgerClicked: false,
-      dropdownHover: false,
+      menuHover: false,
+      menuChildHover: false,
+      productHover: false,
+      productChildHover: false,
       componentName: "app-home",
     };
   },
+  computed: {
+    turnOnMenuHover() {
+      return !((this.menuHover === false) & (this.menuChildHover === false));
+    },
+    turnOnProductHover() {
+      return !((this.productHover === false) & (this.productChildHover === false));
+    },
+  },
   watch: {
-    componentName(){
+    componentName() {
       eventBus.$emit("pageChanged", this.componentName);
-    }
+    },
   },
   components: {
-    AppNavbar
+    AppNavbar,
   },
 };
 </script>
 
 <style lang="scss" scoped >
-@import "../../static/Header.scss";
+@import "../styles/Header.scss";
 </style>
