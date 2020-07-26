@@ -71,7 +71,7 @@
         <li></li>
         <li></li>
       </ul>
-      <app-navbar style="z-index:1000" v-if="hamburgerClicked"></app-navbar>
+      <app-navbar style="z-index:1000" v-if="hamburgerClicked" :products="products"></app-navbar>
     </div>
   </div>
 </template>

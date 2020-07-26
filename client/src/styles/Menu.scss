@@ -1,0 +1,30 @@
+.menu {
+  position: relative;
+  height: 75vh;
+  width: 90vw;
+  overflow: auto;
+  background-color: white;
+  border: none;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  margin: 0 auto;
+  transform: translateY(80px);
+  padding-left: 5vw;
+}
+.food {
+    float: left;
+    height: 250px;
+    width: 250px;
+    margin: 10px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    &-img {
+      height: 90%;
+      background-color: black;
+    }
+    &-name{
+        text-transform: uppercase;
+    }
+    &-price{
+        font-style: italic;
+        font-size: 14px;
+    }
+  }

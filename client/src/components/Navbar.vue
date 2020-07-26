@@ -4,13 +4,28 @@
       <li @click="componentName='app-home'">
         <a>TRANG CHỦ</a>
       </li>
-      <li @click="componentName='app-menu-today'" class="dropdown">MENU</li>
-      <ul class="dropdowncontent">
+      <li @click="componentName='app-menu-today'" class="dropdown">THỰC ĐƠN</li>
+      <ul class="dropdown-content">
         <li @click="componentName='app-menu-today'">
           <a>THỰC ĐƠN HÔM NAY</a>
         </li>
         <li @click="componentName='app-menu-tomorrow'">
           <a>THỰC ĐƠN NGÀY MAI</a>
+        </li>
+      </ul>
+      <li
+        class="dropdown"
+        @click="componentName='app-product'"
+      >SẢN PHẨM</li>
+      <ul
+        class="dropdown-content"
+      >
+        <li
+          v-for="product in products"
+          :key="product.id"
+          @click="componentName=`app-product-${product.id}`"
+        >
+          <a>{{ product.name }}</a>
         </li>
       </ul>
       <li @click="componentName='app-whyus'">
@@ -27,15 +42,16 @@
 import { eventBus } from "../main";
 
 export default {
-    data() {
+  data() {
     return {
       componentName: "app-home",
     };
   },
+  props:['products'],
   watch: {
-    componentName(){
+    componentName() {
       eventBus.$emit("pageChanged", this.componentName);
-    }
+    },
   },
 };
 </script>
@@ -46,6 +62,7 @@ export default {
   z-index: 100 !important;
   position: fixed;
   right: 0;
+  overflow: auto;
   ul {
     list-style: none;
     li {
@@ -63,9 +80,14 @@ export default {
       }
     }
   }
-  .dropdowncontent{
-      margin-left: 20px;
-      font-size: 16px;
+  .dropdown-content {
+    margin-left: 20px;
+    font-size: 16px;
+  }
+}
+@media screen and (max-height: 520px) {
+  .hamburger-content {
+    height: 70vh;
   }
 }
 </style>

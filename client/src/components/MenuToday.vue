@@ -1,23 +1,30 @@
 <template>
-  <div class="todaymenu"></div>
+  <div class="custom-scrollbar menu">
+    <app-food v-for="food in menu" :key="food.id" :name="food.name" :price="food.price"></app-food>
+  </div>
 </template>
 
 <script>
+import AppFood from "./Food.vue";
 export default {
-}
+  data() {
+    return {
+      menu: [],
+    };
+  },
+  components: {
+    AppFood,
+  },
+  created() {
+    this.$http.get("/list").then((res) => {
+      this.menu = res.data.splice(0);
+      console.log(this.menu);
+    });
+  },
+};
 </script>
 
 <style lang="scss">
-.todaymenu {
-  position: relative;
-  height: 75vh;
-  width: 90vw;
-  overflow: auto;
-  background-color: white;
-  border: none;
-  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
-  margin: 0 auto;
-  transform: translateY(80px);
-  z-index: -1;
-}
+@import "../styles/Menu.scss";
+
 </style>
