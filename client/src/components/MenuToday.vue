@@ -15,6 +15,7 @@ export default {
   overflow: auto;
   background-color: white;
   border: none;
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
   margin: 0 auto;
   transform: translateY(80px);
   z-index: -1;

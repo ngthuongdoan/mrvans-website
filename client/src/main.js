@@ -5,6 +5,7 @@ import App from './App'
 import axios from 'axios'
 import VueAxios from 'vue-axios'
  
+axios.defaults.baseURL = `https://tankyapp.herokuapp.com`;
 Vue.use(VueAxios, axios);
 Vue.config.productionTip = false
 export const eventBus = new Vue();

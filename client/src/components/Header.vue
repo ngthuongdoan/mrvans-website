@@ -12,7 +12,7 @@
         @click="componentName='app-menu-today'"
       >MENU</li>
       <ul
-        class="dropdowncontent"
+        class="dropdown-content"
         v-if="turnOnMenuHover"
         @mouseenter="menuChildHover = true"
         @mouseleave="menuChildHover = false"
@@ -27,23 +27,24 @@
       </ul>
       <li
         class="dropdown"
+        id="product-dropdown"
         @mouseenter="productHover=true"
         @mouseleave="productHover = false"
         @click="componentName='app-product'"
       >SẢN PHẨM</li>
       <ul
-        class="dropdowncontent"
-        id="productcontent"
+        class="dropdown-content"
+        id="product-content"
         v-if="turnOnProductHover"
         @mouseenter="productChildHover=true"
         @mouseleave="productChildHover = false"
       >
-        <li @click="componentName='app-product-1'">
-          <a>SẢN PHẨM 1</a>
-        </li>
-        <br />
-        <li @click="componentName='app-product-2'">
-          <a>SẢN PHẨM 2</a>
+        <li
+          v-for="product in products"
+          :key="product.id"
+          @click="componentName=`app-product-${product.id}`"
+        >
+          <a>{{ product.name }}</a>
         </li>
       </ul>
       <li @click="componentName='app-whyus'">
@@ -87,6 +88,7 @@ export default {
       productHover: false,
       productChildHover: false,
       componentName: "app-home",
+      products: [],
     };
   },
   computed: {
@@ -94,7 +96,10 @@ export default {
       return !((this.menuHover === false) & (this.menuChildHover === false));
     },
     turnOnProductHover() {
-      return !((this.productHover === false) & (this.productChildHover === false));
+      return !(
+        (this.productHover === false) &
+        (this.productChildHover === false)
+      );
     },
   },
   watch: {
@@ -104,6 +109,11 @@ export default {
   },
   components: {
     AppNavbar,
+  },
+  created() {
+    this.$http
+      .get("/sanpham")
+      .then((response) => (this.products = response.data.splice(0)));
   },
 };
 </script>
