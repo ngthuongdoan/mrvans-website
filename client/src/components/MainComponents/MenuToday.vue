@@ -25,6 +25,6 @@ export default {
 </script>
 
 <style lang="scss">
-@import "../styles/Menu.scss";
+@import "../../styles/Menu.scss";
 
 </style>

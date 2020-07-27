@@ -1,6 +1,6 @@
 <template>
   <div id="header">
-    <img @click="componentName='app-home'" id="logo" src="../assets/logo.svg" alt />
+    <img @click="componentName='app-home'" id="logo" src="../../assets/logo.svg" alt />
     <nav class="desktop">
       <li @click="componentName='app-home'">
         <a>TRANG CHỦ</a>
@@ -78,7 +78,7 @@
 
 <script>
 import AppNavbar from "./Navbar.vue";
-import { eventBus } from "../main";
+import { eventBus } from "../../main";
 export default {
   data() {
     return {
@@ -119,5 +119,5 @@ export default {
 </script>
 
 <style lang="scss" scoped >
-@import "../styles/Header.scss";
+@import "../../styles/Header.scss";
 </style>

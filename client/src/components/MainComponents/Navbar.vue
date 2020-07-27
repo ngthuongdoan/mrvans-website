@@ -13,13 +13,8 @@
           <a>THỰC ĐƠN NGÀY MAI</a>
         </li>
       </ul>
-      <li
-        class="dropdown"
-        @click="componentName='app-product'"
-      >SẢN PHẨM</li>
-      <ul
-        class="dropdown-content"
-      >
+      <li class="dropdown" @click="componentName='app-product'">SẢN PHẨM</li>
+      <ul class="dropdown-content">
         <li
           v-for="product in products"
           :key="product.id"
@@ -39,7 +34,7 @@
 </template>
 
 <script>
-import { eventBus } from "../main";
+import { eventBus } from "../../main";
 
 export default {
   data() {
@@ -47,7 +42,7 @@ export default {
       componentName: "app-home",
     };
   },
-  props:['products'],
+  props: ["products"],
   watch: {
     componentName() {
       eventBus.$emit("pageChanged", this.componentName);
