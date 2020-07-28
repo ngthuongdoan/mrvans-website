@@ -1,6 +1,7 @@
 <template>
   <div class="custom-scrollbar menu">
-    <app-food v-for="food in menu" :key="food.id" :name="food.name" :price="food.price"></app-food>
+    <h1>{{ title }}</h1>
+    <app-food v-for="food in menu" :key="food.id" :name="food.name" :price="food.price" imgLink="'../../assets/image-placeholder.jpg'"></app-food>
   </div>
 </template>
 
@@ -8,7 +9,15 @@
 import AppFood from "./Food.vue";
 export default {
   data() {
+    const getToday = () => {
+      let today = new Date();
+      let dd = String(today.getDate()).padStart(2, "0");
+      let mm = String(today.getMonth() + 1).padStart(2, "0"); //January is 0!
+      let yyyy = today.getFullYear();
+      return dd + "/" + mm + "/" + yyyy;
+    };
     return {
+      title: `THỰC ĐƠN NGÀY ${getToday()}`,
       menu: [],
     };
   },
@@ -18,7 +27,6 @@ export default {
   created() {
     this.$http.get("/list").then((res) => {
       this.menu = res.data.splice(0);
-      console.log(this.menu);
     });
   },
 };
@@ -26,5 +34,4 @@ export default {
 
 <style lang="scss">
 @import "../../styles/Menu.scss";
-
 </style>

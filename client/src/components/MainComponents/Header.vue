@@ -88,7 +88,7 @@ export default {
       productHover: false,
       productChildHover: false,
       componentName: "app-home",
-      products: [],
+      products: [{ name: "XÚC XÍCH MR.VANS" }, { name: "NẤM BÀO NGƯ XÁM" }],
     };
   },
   computed: {
@@ -111,9 +111,9 @@ export default {
     AppNavbar,
   },
   created() {
-    this.$http
-      .get("/sanpham")
-      .then((response) => (this.products = response.data.splice(0)));
+    this.$http.get("/sanpham").then((response) => {
+      if (response.data.length !== 0) this.products = response.data.splice(0);
+    });
   },
 };
 </script>

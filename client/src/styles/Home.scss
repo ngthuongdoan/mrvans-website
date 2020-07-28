@@ -15,6 +15,7 @@
     font-size: 3vw;
     font-weight: bold;
     text-shadow: 2px 2px 11px #000000;
+    text-transform: uppercase;
   }
   p {
     margin-top: 10px;
@@ -38,10 +39,12 @@
     }
   }
   a {
+    cursor: pointer;
     color: white;
     font-weight: bold;
     font-size: 1vw;
     font-style: italic;
+    text-decoration: underline;
   }
 }
 .slider {

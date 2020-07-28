@@ -26,7 +26,6 @@ export default {
   created() {
     eventBus.$on("pageChanged", (name) => {
       this.componentId = name;
-      console.log(this.componentId);
     });
   },
   components: {

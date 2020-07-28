@@ -1,6 +1,6 @@
 <template>
   <div class="food">
-    <img class="food-img" :src="img-link" alt />
+    <div class="food-img" :style="backgroundImg"></div>
     <h5 class="food-name">{{ name }}</h5>
     <p class="food-price">{{ price }}</p>
   </div>
@@ -8,6 +8,13 @@
 
 <script>
 export default {
-  props: ["img-link", "name", "price"],
+  props: ["imgLink", "name", "price"],
+  data() {
+    return {
+      backgroundImg: {
+        backgroundImage: `url(${imgLink})`,
+      },
+    };
+  },
 };
 </script>

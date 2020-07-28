@@ -1,12 +1,12 @@
 <template>
   <div id="container">
     <section id="slogan">
-      <h1>HÃY ĐỂ CHÚNG TÔI CHĂM SÓC CÁI BỤNG CỦA BẠN</h1>
+      <h1>Cơm ngon không khó, Khi có Mr. Vans</h1>
       <p>Thực đơn ngon, giá hạt dẻ cho một chiếc bụng đói mềm</p>
-      <button>ORDER NOW</button>
+      <button onclick="window.open('https://www.facebook.com/','_blank')">ORDER NOW</button>
       <br />
       <!-- routerlink  -->
-      <a href="#">Ngó sang menu chúng mình nhé...</a>
+      <a @click="componentName='app-menu-today'">Ngó sang menu chúng mình nhé...</a>
     </section>
     <div class="slider desktop">
       <img src="../../assets/icons/arrow.png" alt id="left-arrow" />
@@ -23,7 +23,19 @@
 </template>
 
 <script>
+import { eventBus } from "../../main";
 export default {
+  data() {
+    return {
+      componentName: "app-home",
+      link: "https://www.facebook.com/",
+    };
+  },
+  watch: {
+    componentName() {
+      eventBus.$emit("pageChanged", this.componentName);
+    },
+  },
   mounted() {
     $("#image-container").slick({
       nextArrow: "#right-arrow",
@@ -32,9 +44,9 @@ export default {
       autoplay: true,
       autoplaySpeed: 2000,
       fade: true,
-      cssEase: "linear"
+      cssEase: "linear",
     });
-  }
+  },
 };
 </script>
 

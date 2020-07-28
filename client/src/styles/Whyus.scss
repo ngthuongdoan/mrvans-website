@@ -4,7 +4,11 @@
   width: 90vw;
   top: 80px;
   margin: 0 auto;
-  background: rgba(0, 0, 0, 0.5);
+  // background: rgba(0, 0, 0, 0.5);
+  background-image: url('../../assets/whyus-2.jpg');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
   overflow: auto;
   color: white;
 }
@@ -15,30 +19,33 @@
   padding-top: 10vh;
   padding-right: 5vw;
   overflow: hidden;
+  text-shadow: 2px 2px 11px #000000;
   h1 {
     margin-bottom: 5vh;
   }
-  p {
-  }
 }
 .even {
+  text-shadow: none;
   position: relative;
-  background-color: white;
+  background: white;
   z-index: 1;
   color: black;
   text-align: right;
 }
-
 @media screen and (max-height: 600px) {
+  .whyus{
+    height: 60vh;
+  }
   .card {
     h1 {
+      padding-top: 0;
       font-size: 18px;
+      margin-bottom: 2vh;
     }p{
       font-size: 12px;
     }
   }
 }
-
 @media screen and (max-width: 600px) {
   .card {
     h1 {
