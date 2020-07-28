@@ -1,7 +1,7 @@
 <template>
   <div class="custom-scrollbar menu">
     <h1>{{ title }}</h1>
-    <app-food v-for="food in menu" :key="food.id" :name="food.name" :price="food.price" imgLink="'../../assets/image-placeholder.jpg'"></app-food>
+    <app-food v-for="food in menu" :key="food.id" :name="food.name" :price="food.price" imgLink="'~@/assets/image-placeholder.jpg'"></app-food>
   </div>
 </template>
 
@@ -25,7 +25,7 @@ export default {
     AppFood,
   },
   created() {
-    this.$http.get("/list").then((res) => {
+    this.$http.get("/menu/today").then((res) => {
       this.menu = res.data.splice(0);
     });
   },
@@ -33,5 +33,5 @@ export default {
 </script>
 
 <style lang="scss">
-@import "../../styles/Menu.scss";
+@import "@/styles/Menu.scss";
 </style>

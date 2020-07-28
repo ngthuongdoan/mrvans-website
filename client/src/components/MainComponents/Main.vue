@@ -1,7 +1,7 @@
 <template>
-  <div>
+  <div >
     <app-header></app-header>
-    <component :is="componentId"></component>
+    <component  :is="componentId" @click="closeSidebar()"></component>
     <app-footer></app-footer>
   </div>
 </template>
@@ -15,13 +15,18 @@ import AppMenuTomorrow from "./MenuTomorrow.vue";
 import AppWhyus from "./Whyus.vue";
 import AppContact from "./Contact.vue";
 
-import { eventBus } from "../../main";
+import { eventBus } from "@/main";
 
 export default {
   data() {
     return {
       componentId: "app-home",
     };
+  },
+  methods: {
+    closeSidebar() {
+      eventBus.$emit("closeSidebar");
+    },
   },
   created() {
     eventBus.$on("pageChanged", (name) => {
@@ -41,5 +46,5 @@ export default {
 </script>
 
 <style lang="scss">
-@import "../../styles/App.scss";
+@import "@/styles/App.scss";
 </style>

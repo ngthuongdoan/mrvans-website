@@ -9,21 +9,21 @@
       <a @click="componentName='app-menu-today'">Ngó sang menu chúng mình nhé...</a>
     </section>
     <div class="slider desktop">
-      <img src="../../assets/icons/arrow.png" alt id="left-arrow" />
+      <img src="@/assets/icons/arrow.png" alt id="left-arrow" />
       <div class="image-wrapper">
         <div id="image-container">
-          <img src="../../assets/1.jpg" alt style="width:100%" />
-          <img src="../../assets/2.jpg" alt style="width:100%" />
-          <img src="../../assets/3.jpg" alt style="width:100%" />
+          <img src="@/assets/1.jpg" alt style="width:100%" />
+          <img src="@/assets/2.jpg" alt style="width:100%" />
+          <img src="@/assets/3.jpg" alt style="width:100%" />
         </div>
       </div>
-      <img src="../../assets/icons/arrow.png" alt id="right-arrow" />
+      <img src="@/assets/icons/arrow.png" alt id="right-arrow" />
     </div>
   </div>
 </template>
 
 <script>
-import { eventBus } from "../../main";
+import { eventBus } from "@/main";
 export default {
   data() {
     return {
@@ -51,5 +51,5 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-@import "../../styles/Home.scss";
+@import "@/styles/Home.scss";
 </style>

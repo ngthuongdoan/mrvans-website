@@ -27,7 +27,7 @@ export default {
     AppFood,
   },
   created() {
-    this.$http.get("/list").then((res) => {
+    this.$http.get("/menu/tomorrow").then((res) => {
       this.menu = res.data.splice(0);
     });
   },
@@ -35,5 +35,5 @@ export default {
 </script>
 
 <style lang="scss">
-@import "../../styles/Menu.scss";
+@import "@/styles/Menu.scss";
 </style>

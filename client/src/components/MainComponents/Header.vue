@@ -1,6 +1,6 @@
 <template>
   <div id="header">
-    <img @click="componentName='app-home'" id="logo" src="../../assets/logo.svg" alt />
+    <img @click="componentName='app-home'" id="logo" src="@/assets/logo.svg" alt />
     <nav class="desktop">
       <li @click="componentName='app-home'">
         <a>TRANG CHỦ</a>
@@ -78,7 +78,7 @@
 
 <script>
 import AppNavbar from "./Navbar.vue";
-import { eventBus } from "../../main";
+import { eventBus } from "@/main";
 export default {
   data() {
     return {
@@ -88,7 +88,7 @@ export default {
       productHover: false,
       productChildHover: false,
       componentName: "app-home",
-      products: [{ name: "XÚC XÍCH MR.VANS" }, { name: "NẤM BÀO NGƯ XÁM" }],
+      products: [],
     };
   },
   computed: {
@@ -111,7 +111,10 @@ export default {
     AppNavbar,
   },
   created() {
-    this.$http.get("/sanpham").then((response) => {
+    eventBus.$on("closeSidebar", () => {
+      this.hamburgerClicked = false;
+    });
+    this.$http.get("/products").then((response) => {
       if (response.data.length !== 0) this.products = response.data.splice(0);
     });
   },
@@ -119,5 +122,5 @@ export default {
 </script>
 
 <style lang="scss" scoped >
-@import "../../styles/Header.scss";
+@import "@/styles/Header.scss";
 </style>

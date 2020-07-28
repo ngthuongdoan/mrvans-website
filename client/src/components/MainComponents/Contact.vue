@@ -3,7 +3,9 @@
     <div v-for="(item, index) in items" :key="index" :class="'card ' + item.even">
       <h1>{{ item.title }}</h1>
       <p v-if="item.title !== 'Liên hệ'">{{ item.content }}</p>
-      <pre v-else>{{ item.content }}</pre>
+      <ul v-else>
+        <li v-for="c in item.content" :key="c">{{c}}</li>
+      </ul>
     </div>
     <div class="card maps">
       <iframe
@@ -31,28 +33,27 @@ export default {
           title: "Giới thiệu",
           content:
             "Công ty TNHH Green Gro là một công ty chuyên cung cấp và chế biến các mặt hàng thực phẩm, Xúc xích tươi, cơm trưa văn phòng. Với khẩu hiệu “Thấu hiểu từng bữa cơm”, chúng tôi với mong muốn mang đến cho mọi nhà những thực phẩm sạch, tươi ngon và những bữa cơm chất lượng đến với mọi người.",
-          backgroundImage: "../../assets/whyus-1.jpg",
         },
         {
           even: "even",
           title: "Tầm nhìn",
           content:
             "Trong 5 năm tới, Mr. Vans sẽ trở thành thương hiệu hàng đầu cung cấp các loại thực phẩm tươi ngon đến với mọi nhà, cửa hàng, nhà hàng. Và đặc biệt sẽ đưa các sản phẩm đặc biệt của Việt Nam ra thị trường nước ngoài.",
-          backgroundImage: "../../assets/whyus-2.jpg",
         },
         {
           even: "",
           title: "Sứ mệnh",
           content:
             "Đối với người tiêu dùng: Mr. Vans xác định cho mình sứ mệnh trở thành người bạn đồng hành “Thấu hiểu từng bữa cơm” của các bạn, dịch vụ chúng tôi cũng cấp giúp khách hàng được sử dụng những thực phẩm tươi ngon, đảm bảo chất lượng, đặc biệt tiết kiệm thời gian và giảm thiểu chi phí.",
-          backgroundImage: "../../assets/whyus-3.jpg",
         },
         {
           even: "even",
           title: "Liên hệ",
-          content:
-            "Địa chỉ: 236/3 Nguyễn Thái Bình, Phường 12, Quận Tân Bình, Hồ Chí Minh\nHotline: 05 646464 99\nEmail: phumrvans@gmail.com",
-          backgroundImage: "../../assets/whyus-4.jpg",
+          content: [
+            "Địa chỉ: 236/3 Nguyễn Thái Bình, Phường 12, Quận Tân Bình, Hồ Chí Minh",
+            "Hotline: 05 646464 99",
+            "Email: phumrvans@gmail.com",
+          ],
         },
       ],
     };
@@ -62,5 +63,5 @@ export default {
 </script>
 
 <style lang="scss">
-@import "../../styles/Contact.scss";
+@import "@/styles/Contact.scss";
 </style>

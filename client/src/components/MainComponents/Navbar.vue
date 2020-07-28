@@ -34,20 +34,22 @@
 </template>
 
 <script>
-import { eventBus } from "../../main";
+import { eventBus } from "@/main";
 
 export default {
   data() {
     return {
-      componentName: "app-home",
+      componentName: "",
     };
   },
   props: ["products"],
   watch: {
     componentName() {
-      eventBus.$emit("pageChanged", this.componentName);
+      eventBus.$emit("pageChanged", (this.componentName));
+      eventBus.$emit("closeSidebar");
     },
   },
+
 };
 </script>
 

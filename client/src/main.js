@@ -1,13 +1,13 @@
 import Vue from "vue";
-import App from "./App.vue";
+import App from "@/App.vue";
 import axios from "axios";
 import VueAxios from "vue-axios";
 import VueRouter from "vue-router";
 
-import Main from "./components/MainComponents/Main.vue";
-import Dashboard from "./components/AdminComponents/Dashboard.vue";
+import Main from "@/components/MainComponents/Main.vue";
+import Dashboard from "@/components/AdminComponents/Dashboard.vue";
 
-axios.defaults.baseURL = `https://tankyapp.herokuapp.com`;
+axios.defaults.baseURL = `https://mrvans.herokuapp.com/api`;
 Vue.use(VueAxios, axios);
 
 const routes = [
