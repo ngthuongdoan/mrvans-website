@@ -1,7 +1,7 @@
 <template>
-  <div >
+  <div>
     <app-header></app-header>
-    <component  :is="componentId" @click="closeSidebar()"></component>
+    <component :is="componentId"></component>
     <app-footer></app-footer>
   </div>
 </template>
@@ -22,11 +22,6 @@ export default {
     return {
       componentId: "app-home",
     };
-  },
-  methods: {
-    closeSidebar() {
-      eventBus.$emit("closeSidebar");
-    },
   },
   created() {
     eventBus.$on("pageChanged", (name) => {

@@ -1,5 +1,5 @@
 <template>
-  <div class="hamburger-content">
+  <div v-on-clickaway="away" class="hamburger-content">
     <ul>
       <li @click="componentName='app-home'">
         <a>TRANG CHỦ</a>
@@ -35,6 +35,7 @@
 
 <script>
 import { eventBus } from "@/main";
+import { directive as onClickaway } from "vue-clickaway";
 
 export default {
   data() {
@@ -45,11 +46,18 @@ export default {
   props: ["products"],
   watch: {
     componentName() {
-      eventBus.$emit("pageChanged", (this.componentName));
+      eventBus.$emit("pageChanged", this.componentName);
       eventBus.$emit("closeSidebar");
     },
   },
-
+  directives: {
+    onClickaway: onClickaway,
+  },
+  methods: {
+    away: function () {
+      eventBus.$emit("closeSidebar");
+    },
+  },
 };
 </script>
 

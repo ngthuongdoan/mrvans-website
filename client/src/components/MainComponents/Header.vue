@@ -91,6 +91,7 @@ export default {
       products: [],
     };
   },
+  methods: {},
   computed: {
     turnOnMenuHover() {
       return !((this.menuHover === false) & (this.menuChildHover === false));
