@@ -1,14 +1,13 @@
 import Vue from "vue";
-import Router from "vue-router";
-import Main from "@/components/MainComponents/Main.vue";
-import Dashboard from "@/components/AdminComponents/Dashboard.vue";
+import VueRouter from "vue-router";
+import routes from "./routes";
+Vue.use(VueRouter);
 
-Vue.use(Router);
-
-export default new Router({
-  mode: "history",
-  routes: [
-    { path: "/", components: Main },
-    { path: "/admin", components: Dashboard }
-  ]
+// configure router
+const router = new VueRouter({
+  routes, // short for routes: routes
+  linkActiveClass: "active",
+  mode:"history",
 });
+
+export default router;
