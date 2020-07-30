@@ -1,7 +1,7 @@
 {
-  "name": "mrvans-client",
+  "name": "mrvans-clients",
   "version": "1.0.0",
-  "description": "A Vue.js project",
+  "description": "MRVANS Website (Client)",
   "author": "ngthuongdoan <ngthuongdoan@gmail.com>",
   "private": true,
   "scripts": {
