@@ -1,7 +1,15 @@
 <template>
   <div class="custom-scrollbar menu">
     <h1>{{ title }}</h1>
-    <app-food v-for="food in menu" :key="food.id" :name="food.name" :price="food.price" imgLink="'~@/assets/image-placeholder.jpg'"></app-food>
+    <div class="food-container">
+      <app-food
+        v-for="food in menu"
+        :key="food.id"
+        :name="food.name"
+        :price="food.price"
+        :imgLink="food.imageURL"
+      ></app-food>
+    </div>
   </div>
 </template>
 
