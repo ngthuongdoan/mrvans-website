@@ -1,9 +1,9 @@
 <template>
   <div id="container">
     <section id="slogan">
-      <h1>Cơm ngon không khó, Khi có Mr. Vans</h1>
+      <h1>Cơm ngon không khó, Khi có <span>Mr. Vans</span></h1>
       <p>Thực đơn ngon, giá hạt dẻ cho một chiếc bụng đói mềm</p>
-      <button onclick="window.open('https://www.facebook.com/','_blank')">ORDER NOW</button>
+      <button onclick="window.open('https://www.facebook.com/','_blank')">ĐẶT MÓN NGAY</button>
       <br />
       <!-- routerlink  -->
       <a @click="componentName='app-menu-today'">Ngó sang menu chúng mình nhé...</a>

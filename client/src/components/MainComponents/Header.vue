@@ -56,13 +56,13 @@
     </nav>
     <ul class="desktop">
       <li>
-        <ion-icon name="logo-facebook"></ion-icon>
+        <img src="@/assets/icons/facebook.png" alt="" title="0564646499">
       </li>
       <li>
-        <ion-icon name="logo-instagram"></ion-icon>
+        <img src="@/assets/icons/zalo.png" alt="" title="0564646499">
       </li>
       <li>
-        <ion-icon name="call-outline"></ion-icon>
+        <img src="@/assets/icons/phone.png" alt="0564646499" title="0564646499">
       </li>
     </ul>
     <div class="mobile hamburger-wrapper">
