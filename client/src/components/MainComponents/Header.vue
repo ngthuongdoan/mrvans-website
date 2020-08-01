@@ -66,7 +66,7 @@
       </li>
     </ul>
     <div class="mobile hamburger-wrapper">
-      <ul class="hamburger" @click="hamburgerOpen">
+      <ul class="hamburger" @click.stop="hamburgerOpen">
         <li></li>
         <li></li>
         <li></li>
