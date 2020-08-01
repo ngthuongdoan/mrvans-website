@@ -65,8 +65,8 @@
         <img src="@/assets/icons/phone.png" alt="0564646499" title="0564646499" />
       </li>
     </ul>
-    <div class="mobile hamburger-wrapper" @click.stop="hamburgerOpen">
-      <ul class="hamburger" >
+    <div class="mobile hamburger-wrapper" >
+      <ul class="hamburger" @click.stop="hamburgerOpen">
         <li></li>
         <li></li>
         <li></li>
