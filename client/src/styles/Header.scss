@@ -74,12 +74,12 @@ ul {
 }
 
 .hamburger-wrapper {
-  // cursor: pointer;
   position: fixed;
   right: 20px;
   top: 5px;
   height: fit-content;
   .hamburger{
+    cursor: pointer;
     background-color: transparent;
     border: transparent;
     &:focus{
