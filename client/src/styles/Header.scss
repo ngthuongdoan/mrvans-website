@@ -74,12 +74,19 @@ ul {
 }
 
 .hamburger-wrapper {
-  cursor: pointer;
+  // cursor: pointer;
   position: fixed;
   right: 20px;
   top: 5px;
   height: fit-content;
-  li {
+  .hamburger{
+    background-color: transparent;
+    border: transparent;
+    &:focus{
+      border: transparent; 
+    }
+  }
+  span {
     width: 30px;
     height: 5px;
     background-color: black;
@@ -88,9 +95,6 @@ ul {
     margin: 3px 0;
     opacity: 0.8;
   }
-}
-.hamburger {
-  cursor: pointer;
 }
 #hamburger-content {
   display: none;

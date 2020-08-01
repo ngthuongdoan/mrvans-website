@@ -66,11 +66,11 @@
       </li>
     </ul>
     <div class="mobile hamburger-wrapper" >
-      <ul class="hamburger" @click.stop="hamburgerOpen">
-        <li></li>
-        <li></li>
-        <li></li>
-      </ul>
+      <button class="hamburger" @click.stop="hamburgerOpen">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
       <app-navbar style="z-index:1000" v-if="hamburgerClicked" :products="products"></app-navbar>
     </div>
   </div>
