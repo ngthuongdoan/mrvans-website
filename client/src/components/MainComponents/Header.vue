@@ -56,17 +56,17 @@
     </nav>
     <ul class="desktop">
       <li>
-        <img src="@/assets/icons/facebook.png" alt="" title="0564646499">
+        <img src="@/assets/icons/facebook.png" alt title="0564646499" />
       </li>
       <li>
-        <img src="@/assets/icons/zalo.png" alt="" title="0564646499">
+        <img src="@/assets/icons/zalo.png" alt title="0564646499" />
       </li>
       <li>
-        <img src="@/assets/icons/phone.png" alt="0564646499" title="0564646499">
+        <img src="@/assets/icons/phone.png" alt="0564646499" title="0564646499" />
       </li>
     </ul>
     <div class="mobile hamburger-wrapper">
-      <ul class="hamburger" @click="hamburgerClicked=!hamburgerClicked">
+      <ul class="hamburger" @click="hamburgerOpen">
         <li></li>
         <li></li>
         <li></li>
@@ -91,7 +91,11 @@ export default {
       products: [],
     };
   },
-  methods: {},
+  methods: {
+    hamburgerOpen() {
+      this.hamburgerClicked = !this.hamburgerClicked;
+    },
+  },
   computed: {
     turnOnMenuHover() {
       return !((this.menuHover === false) & (this.menuChildHover === false));
