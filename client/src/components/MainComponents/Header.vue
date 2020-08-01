@@ -71,7 +71,7 @@
         <span></span>
         <span></span>
       </button>
-      <app-navbar style="z-index:1000" v-if="hamburgerClicked" :products="products"></app-navbar>
+      <app-navbar style="z-index:1000" v-show="hamburgerClicked" :products="products"></app-navbar>
     </div>
   </div>
 </template>
