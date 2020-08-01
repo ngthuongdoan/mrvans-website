@@ -26,7 +26,6 @@
 export default {
   data() {
     return {
-      API_KEY: "AIzaSyBkhnp1AFlPLDnmmL3M0uAf9RFirSHCP2U",
       items: [
         {
           even: "",
@@ -58,7 +57,6 @@ export default {
       ],
     };
   },
-  created() {},
 };
 </script>
 
