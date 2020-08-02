@@ -3,14 +3,6 @@ import App from "@/App.vue";
 import axios from "axios";
 import VueAxios from "vue-axios";
 import router from "./router/index";
-import VueFbCustomerChat from "vue-fb-customer-chat";
-
-Vue.use(VueFbCustomerChat, {
-  page_id: "109226167490414", //  change 'null' to your Facebook Page ID,
-  theme_color: '#0084ff', // theme color in HEX
-  locale: 'en_US', // default 'en_US'
-})
-
 axios.defaults.baseURL = `https://mrvans.herokuapp.com/api`;
 Vue.use(VueAxios, axios);
 
@@ -19,5 +11,16 @@ export const eventBus = new Vue();
 /* eslint-disable no-new */
 new Vue({
   router,
-  render: h => h(App)
+  render: h => h(App),
+  created() {
+    return (function(d, s, id) {
+      var js,
+        fjs = d.getElementsByTagName(s)[0];
+      if (d.getElementById(id)) return;
+      js = d.createElement(s);
+      js.id = id;
+      js.src = "https://connect.facebook.net/en_US/sdk/xfbml.customerchat.js";
+      fjs.parentNode.insertBefore(js, fjs);
+    })(document, "script", "facebook-jssdk");
+  }
 }).$mount("#app");
