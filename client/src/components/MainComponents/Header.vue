@@ -56,10 +56,10 @@
     </nav>
     <ul class="desktop">
       <li>
-        <img src="@/assets/icons/facebook.png" alt title="0564646499" />
+        <img onclick="window.open('https://www.facebook.com/mrvansfood','_blank')" src="@/assets/icons/facebook.png" alt title="https://www.facebook.com/mrvansfood/" />
       </li>
       <li>
-        <img src="@/assets/icons/zalo.png" alt title="0564646499" />
+        <img src="@/assets/icons/zalo.png" alt title="0368680611" />
       </li>
       <li>
         <img src="@/assets/icons/phone.png" alt="0564646499" title="0564646499" />
