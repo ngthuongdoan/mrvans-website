@@ -34,3 +34,9 @@ export default {
 };
 </script>
 
+<style lang="scss">
+.zalo-chat-widget{
+  top:80vh;
+}
+</style>
+
