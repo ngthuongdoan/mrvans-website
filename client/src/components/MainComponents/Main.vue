@@ -1,7 +1,9 @@
 <template>
   <div>
     <app-header></app-header>
-    <component :is="componentId"></component>
+    <transition name="component-fade" mode="out-in">
+      <component :is="componentId"></component>
+    </transition>
     <app-footer></app-footer>
   </div>
 </template>
@@ -42,4 +44,10 @@ export default {
 
 <style lang="scss">
 @import "@/styles/App.scss";
+.component-fade-enter-active, .component-fade-leave-active {
+  transition: all 1s ease;
+}
+.component-fade-enter, .component-fade-leave{
+  opacity: 0;
+}
 </style>
