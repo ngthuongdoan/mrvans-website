@@ -8,9 +8,28 @@
         <a href="mailto:phumrvans@gmail.com">phumrvans@gmail.com</a>
       </p>
     </address>
+    <!-- Load Facebook SDK for JavaScript -->
+    <div id="fb-root"></div>
+    <div
+      class="fb-customerchat"
+      attribution="setup_tool"
+      page_id="109226167490414"
+      theme_color="#0084ff"
+    ></div>
   </footer>
 </template>
-
+<script>
+export default {
+  mounted() {
+    window.fbAsyncInit = function () {
+      FB.init({
+        xfbml: true,
+        version: "v7.0",
+      });
+    };
+  },
+}
+</script>
 <style lang="scss">
 footer {
   width: 100%;
