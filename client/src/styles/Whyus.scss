@@ -4,7 +4,6 @@
   width: 90vw;
   top: 80px;
   margin: 0 auto;
-  // background: rgba(0, 0, 0, 0.5);
   background-image: url("~@/assets/whyus-2.jpg");
   background-position: center;
   background-repeat: no-repeat;
@@ -13,12 +12,11 @@
   color: white;
 }
 .card {
-  height: 50%;
+  min-height: 50%;
   width: 100%;
   padding-left: 5vw;
   padding-top: 10vh;
   padding-right: 5vw;
-  overflow: hidden;
   text-shadow: 2px 2px 11px #000000;
   h1 {
     margin-bottom: 5vh;
