@@ -2,10 +2,27 @@
   <div class="custom-scrollbar contact">
     <div v-for="(item, index) in items" :key="index" :class="'card ' + item.even">
       <h1>{{ item.title }}</h1>
-      <p v-if="item.title !== 'Liên hệ'">{{ item.content }}</p>
-      <ul v-else>
-        <li v-for="c in item.content" :key="c">{{c}}</li>
+      <div v-if="item.title == 'Giới thiệu'" style="margin-bottom:10vh">
+        <p v-html="item.content.header"></p>
+        <br />
+        <ul style="margin-left:5vh">
+          <li v-for="(paragraph, index) in item.content.paragraphs" :key="paragraph.name">
+            <h3 style="margin: 2vh auto">{{ index+1 }}. {{ paragraph.name }}:</h3>
+            <p
+              style="margin-left:5vh"
+              v-for="(text, index) in paragraph.texts"
+              :key="index"
+              v-html="text"
+            ></p>
+          </li>
+        </ul>
+        <br />
+        <p v-html="item.content.footer"></p>
+      </div>
+      <ul v-else-if="item.title == 'Liên hệ'">
+        <li v-for="c in item.content" :key="c">{{ c }}</li>
       </ul>
+      <p v-else>{{ item.content }}</p>
     </div>
     <div class="card maps">
       <iframe
@@ -30,20 +47,38 @@ export default {
         {
           even: "",
           title: "Giới thiệu",
-          content:
-            "Công ty TNHH Green Gro là một công ty chuyên cung cấp và chế biến các mặt hàng thực phẩm, Xúc xích tươi, cơm trưa văn phòng. Với khẩu hiệu “Thấu hiểu từng bữa cơm”, chúng tôi với mong muốn mang đến cho mọi nhà những thực phẩm sạch, tươi ngon và những bữa cơm chất lượng đến với mọi người.",
+          content: {
+            header:
+              "“Con đường ngắn nhất để chạm đến trái tim là … đi qua dạ dày”. Chúng tôi yêu sức khỏe của mình và tin chắc rằng bạn cũng thế. Để có 1 trái tim khỏe mạnh thì việc cho bao tử tiếp nhận những thực phẩm an toàn, chất lượng là cần thiết. <b>Công ty TNHH Green Gro</b> ra đời với tiêu chí như thế:",
+            footer:
+              "Chúng tôi hiểu KH của mình cần gì và luôn mong muốn đem lại giá trị tốt nhất cho KH. Đó cũng chính là khẩu hiệu hàng đầu của công ty <b>“Thấu hiểu từng bữa cơm”</b>",
+            paragraphs: [
+              {
+                name: "Chuyên cung cấp nguyên liệu, thực phẩm tươi sạch",
+                texts: [
+                  "<b>Nấm bào ngư xám/ Nấm mối đen:</b> Trại nấm chính chủ của gia đình, sản xuất theo công nghệ thông minh kép kín, an toàn vệ sinh. Từng sản phẩm luôn được lựa chọn kỹ lưỡng trao đến tay người tiêu dùng.",
+                  "<b>Xúc xích tươi:</b> Nếu bạn là tín đồ của xúc xích nhưng chẳng thể tìm ra nơi sản xuất an toàn vệ sinh thực phẩm tại khu vực Thành Phố Hồ Chí Minh hay xa hơn là khắp 63 Tỉnh, Thành Phố còn lại của Việt Nam ? Đừng lo lắng <b>XÚC XÍCH MR. VANS</b> hứa hẹn 1 cực phẩm chạm thẳng đến con tim kể cả những người khó tính",
+                ],
+              },
+              {
+                name: "Cơm trưa văn phòng",
+                texts: [
+                  "Từ những nguyên liệu tươi ngon, giá thành hợp lý, bạn không phải nghĩ “TRƯA NAY ĂN GÌ?”. Hãy để Mr.Vans giao tận nơi, phục vụ tận chổ, không những ăn ngon mà còn nhiều khuyến mãi cho KH thân thiết.",
+                ],
+              },
+            ],
+          },
         },
         {
           even: "even",
           title: "Tầm nhìn",
-          content:
-            "Trong 5 năm tới, Mr. Vans sẽ trở thành thương hiệu hàng đầu cung cấp các loại thực phẩm tươi ngon đến với mọi nhà, cửa hàng, nhà hàng. Và đặc biệt sẽ đưa các sản phẩm đặc biệt của Việt Nam ra thị trường nước ngoài.",
+          content: "",
         },
         {
           even: "",
           title: "Sứ mệnh",
           content:
-            "Đối với người tiêu dùng: Mr. Vans xác định cho mình sứ mệnh trở thành người bạn đồng hành “Thấu hiểu từng bữa cơm” của các bạn, dịch vụ chúng tôi cũng cấp giúp khách hàng được sử dụng những thực phẩm tươi ngon, đảm bảo chất lượng, đặc biệt tiết kiệm thời gian và giảm thiểu chi phí.",
+            "Bằng chính sự tận tâm và trách nhiệm của mình, Mr.Vans sẽ luôn đồng hành thấu hiểu khách hàng của mình như những người bạn. Mr.Vans cam kết sẽ mang đến những sản phẩm chất lượng tốt, có giá trị dinh dưỡng cao cũng như làm KH hài lòng về dịch vụ, giá cả, đóng góp một phần nào đó nâng cao sức khỏe của người tiêu dùng.",
         },
         {
           even: "even",
