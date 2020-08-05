@@ -95,6 +95,6 @@ export default {
 };
 </script>
 
-<style lang="scss">
+<style lang="scss" scoped>
 @import "@/styles/Contact.scss";
 </style>
