@@ -51,7 +51,7 @@ export default {
             header:
               "“Con đường ngắn nhất để chạm đến trái tim là … đi qua dạ dày”. Chúng tôi yêu sức khỏe của mình và tin chắc rằng bạn cũng thế. Để có 1 trái tim khỏe mạnh thì việc cho bao tử tiếp nhận những thực phẩm an toàn, chất lượng là cần thiết. <b>Công ty TNHH Green Gro</b> ra đời với tiêu chí như thế:",
             footer:
-              "Chúng tôi hiểu KH của mình cần gì và luôn mong muốn đem lại giá trị tốt nhất cho KH. Đó cũng chính là khẩu hiệu hàng đầu của công ty <b>“Thấu hiểu từng bữa cơm”</b>",
+              "Chúng tôi hiểu khách hàng của mình cần gì và luôn mong muốn đem lại giá trị tốt nhất cho khách hàng. Đó cũng chính là khẩu hiệu hàng đầu của công ty <b>“Thấu hiểu từng bữa cơm”</b>",
             paragraphs: [
               {
                 name: "Chuyên cung cấp nguyên liệu, thực phẩm tươi sạch",
@@ -63,7 +63,7 @@ export default {
               {
                 name: "Cơm trưa văn phòng",
                 texts: [
-                  "Từ những nguyên liệu tươi ngon, giá thành hợp lý, bạn không phải nghĩ “TRƯA NAY ĂN GÌ?”. Hãy để Mr.Vans giao tận nơi, phục vụ tận chổ, không những ăn ngon mà còn nhiều khuyến mãi cho KH thân thiết.",
+                  "Từ những nguyên liệu tươi ngon, giá thành hợp lý, bạn không phải nghĩ “TRƯA NAY ĂN GÌ?”. Hãy để Mr.Vans giao tận nơi, phục vụ tận chổ, không những ăn ngon mà còn nhiều khuyến mãi cho khách hàng thân thiết.",
                 ],
               },
             ],
@@ -78,7 +78,7 @@ export default {
           even: "",
           title: "Sứ mệnh",
           content:
-            "Bằng chính sự tận tâm và trách nhiệm của mình, Mr.Vans sẽ luôn đồng hành thấu hiểu khách hàng của mình như những người bạn. Mr.Vans cam kết sẽ mang đến những sản phẩm chất lượng tốt, có giá trị dinh dưỡng cao cũng như làm KH hài lòng về dịch vụ, giá cả, đóng góp một phần nào đó nâng cao sức khỏe của người tiêu dùng.",
+            "Bằng chính sự tận tâm và trách nhiệm của mình, Mr.Vans sẽ luôn đồng hành thấu hiểu khách hàng của mình như những người bạn. Mr.Vans cam kết sẽ mang đến những sản phẩm chất lượng tốt, có giá trị dinh dưỡng cao cũng như làm khách hàng hài lòng về dịch vụ, giá cả, đóng góp một phần nào đó nâng cao sức khỏe của người tiêu dùng.",
         },
         {
           even: "even",
