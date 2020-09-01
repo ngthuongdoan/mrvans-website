@@ -1,0 +1,65 @@
+.contact {
+  position: relative;
+  height: 75vh;
+  width: 90vw;
+  top: 80px;
+  margin: 0 auto;
+  // background: rgba(0, 0, 0, 0.5);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  overflow: auto;
+  color: white;
+}
+.card {
+  background: rgba(0, 0, 0, 0.5);
+  min-height: 50%;
+  width: 100%;
+  padding-left: 5vw;
+  padding-top: 10vh;
+  padding-right: 5vw;
+  line-height: 1.6;
+  h1 {
+    margin-bottom: 5vh;
+  }
+  ul{
+    list-style: none;
+  }
+}
+.even {
+  text-shadow: none;
+  position: relative;
+  background: white;
+  color: black;
+  text-align: right;
+}
+.maps {
+  padding: 5px;
+  height: 100%;
+}
+@media screen and (max-height: 600px) {
+  .contact {
+    top: 50px;
+    height: 75vh;
+  }
+  .card {
+    h1 {
+      padding-top: 0;
+      font-size: 18px;
+      margin-bottom: 2vh;
+    }
+    p, li {
+      font-size: 12px;
+    }
+  }
+}
+@media screen and (max-width: 600px) {
+  .card {
+    h1 {
+      font-size: 18px;
+    }
+    p, li {
+      font-size: 12px;
+    }
+  }
+}

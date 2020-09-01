@@ -1,0 +1,130 @@
+#header {
+  display: grid;
+  position: fixed;
+  grid-template-columns: 1fr 5fr 1fr;
+  grid-template-rows: 1fr;
+  width: 100%;
+  justify-items: center;
+  background-color: white;
+  z-index: 9999 !important;
+}
+#logo {
+  width: 100px;
+  height: 40px;
+  margin-top: 10px;
+  justify-self: right;
+  cursor: pointer;
+}
+nav {
+  overflow: hidden;
+  display: flex;
+  list-style: none;
+  height: 100%;
+  text-align: center;
+  font-size: 1.3em;
+  li {
+    position: relative;
+    cursor: pointer;
+    display: inline-block;
+    padding: 20px;
+    margin: 0;
+    height: 100%;
+    transition: all 0.3s ease-in-out;
+    &:hover {
+      background-color: #ffd110;
+    }
+    a {
+      text-decoration: none;
+      color: black;
+      display: block;
+    }
+  }
+}
+ul {
+  list-style: none;
+  text-align: left;
+  cursor: pointer;
+  li {
+    display: inline-block;
+    margin-top: 1.5vh;
+    padding-left: 10px;
+    img {
+      width: 30px;
+    }
+  }
+}
+.dropdown-content {
+  background-color: white;
+  position: absolute;
+  width: 300px;
+  height: fit-content;
+  li {
+    width: 100%;
+    margin: 0;
+    padding: 20px;
+    border: none;
+  }
+}
+
+.mobile {
+  display: none;
+}
+
+.hamburger-wrapper {
+  position: fixed;
+  right: 20px;
+  top: 5px;
+  height: fit-content;
+  .hamburger{
+    cursor: pointer;
+    background-color: transparent;
+    border: transparent;
+    &:focus{
+      border: transparent; 
+    }
+  }
+  span {
+    pointer-events: none;
+    width: 30px;
+    height: 5px;
+    background-color: black;
+    border-radius: 20px;
+    display: block;
+    margin: 3px 0;
+    opacity: 0.8;
+  }
+}
+#hamburger-content {
+  display: none;
+}
+@media screen and (max-width: 1400px) {
+  #header {
+    height: 55px;
+  }
+  nav{
+    font-size: 1em;
+  }
+  .dropdown-content {
+    width: 250px;
+  }
+}
+@media screen and (max-width: 1024px) {
+  .desktop {
+    display: none;
+  }
+  .mobile {
+    display: block;
+  }
+  #header {
+    height: 40px;
+  }
+  #logo {
+    margin-top: 0px;
+    width: 60px;
+  }
+}
+@media screen and (max-width: 600px) {
+  #logo {
+    margin-left: 10px;
+  }
+}
