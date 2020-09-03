@@ -62,17 +62,17 @@
     <ul class="desktop">
       <li>
         <img
-          onclick="window.open('https://www.facebook.com/mrvansfood','_blank')"
+          onclick="window.open('https://www.facebook.com/comvanphongmrvans/','_blank')"
           src="@/assets/icons/facebook.png"
           alt
-          title="https://www.facebook.com/mrvansfood/"
+          title="https://www.facebook.com/comvanphongmrvans//"
         />
       </li>
       <li>
-        <img src="@/assets/icons/zalo.png" alt title="0368680611" />
+        <img src="@/assets/icons/zalo.png" alt="03 6868 0611" title="03 6868 0611" />
       </li>
       <li>
-        <img src="@/assets/icons/phone.png" alt="0564646499" title="0564646499" />
+        <img src="@/assets/icons/phone.png" alt="05 6464 6499" title="05 6464 6499" />
       </li>
     </ul>
     <div class="mobile hamburger-wrapper">
@@ -99,6 +99,7 @@ export default {
       productChildHover: false,
       componentName: "app-home",
       products: [],
+      message:"https://www.facebook.com/comvanphongmrvans/"
     };
   },
   methods: {

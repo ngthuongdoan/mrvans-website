@@ -9,99 +9,104 @@
     </div>
     <div class="overlay" v-if="foodClick">
       <div class="container">
-    <form @submit.prevent="updateFood">
-      <div class="form-group">
-        <label for="exampleFormControlInput1">Tên</label>
-        <input type="text" class="form-control" id="exampleFormControlInput1" v-model="food.name" />
-      </div>
-      <div class="form-group">
-        <label for="exampleFormControlInput3">Link ảnh:</label>
-        <input
-          type="text"
-          class="form-control"
-          id="exampleFormControlInput3"
-          v-model="food.imgLink"
-        />
-      </div>
-      <div class="form-group">
-        <label for="exampleFormControlInput2">Giá</label>
-        <input
-          type="number"
-          class="form-control"
-          id="exampleFormControlInput2"
-          v-model="food.price"
-        />
-      </div>
-      <label>Thứ:</label>
-      <div class="form-check">
-        <input
-          class="form-check-input"
-          type="checkbox"
-          value="2"
-          v-model="food.day"
-          id="defaultCheck1"
-        />
-        <label class="form-check-label" for="defaultCheck1">Thứ hai</label>
-        <br />
-        <input
-          class="form-check-input"
-          type="checkbox"
-          value="3"
-          v-model="food.day"
-          id="defaultCheck2"
-        />
-        <label class="form-check-label" for="defaultCheck2">Thứ ba</label>
-        <br />
-        <input
-          class="form-check-input"
-          type="checkbox"
-          value="4"
-          v-model="food.day"
-          id="defaultCheck3"
-        />
-        <label class="form-check-label" for="defaultCheck3">Thứ tư</label>
-        <br />
-        <input
-          class="form-check-input"
-          type="checkbox"
-          value="5"
-          v-model="food.day"
-          id="defaultCheck4"
-        />
-        <label class="form-check-label" for="defaultCheck4">Thứ năm</label>
-        <br />
-        <input
-          class="form-check-input"
-          type="checkbox"
-          value="6"
-          v-model="food.day"
-          id="defaultCheck5"
-        />
-        <label class="form-check-label" for="defaultCheck5">Thứ sáu</label>
-        <br />
-        <input
-          class="form-check-input"
-          type="checkbox"
-          value="7"
-          v-model="food.day"
-          id="defaultCheck6"
-        />
-        <label class="form-check-label" for="defaultCheck6">Thứ bảy</label>
-        <br />
-        <input
-          class="form-check-input"
-          type="checkbox"
-          value="8"
-          v-model="food.day"
-          id="defaultCheck7"
-        />
-        <label class="form-check-label" for="defaultCheck7">Chủ nhật</label>
-        <br />
-        <br />
-      </div>
-      <input type="submit" value="Xong" class="btn btn-primary" />
-      <button class="btn btn-dark" style="margin-left:10px" @click="turnOffOverlay">Hủy</button>
-    </form>
+        <form @submit.prevent="updateFood">
+          <div class="form-group">
+            <label for="exampleFormControlInput1">Tên</label>
+            <input
+              type="text"
+              class="form-control"
+              id="exampleFormControlInput1"
+              v-model="food.name"
+            />
+          </div>
+          <div class="form-group">
+            <label for="exampleFormControlInput3">Link ảnh:</label>
+            <input
+              type="text"
+              class="form-control"
+              id="exampleFormControlInput3"
+              v-model="food.imageURL"
+            />
+          </div>
+          <div class="form-group">
+            <label for="exampleFormControlInput2">Giá</label>
+            <input
+              type="number"
+              class="form-control"
+              id="exampleFormControlInput2"
+              v-model="food.price"
+            />
+          </div>
+          <label>Thứ:</label>
+          <div class="form-check">
+            <input
+              class="form-check-input"
+              type="checkbox"
+              value="2"
+              v-model="food.day"
+              id="defaultCheck1"
+            />
+            <label class="form-check-label" for="defaultCheck1">Thứ hai</label>
+            <br />
+            <input
+              class="form-check-input"
+              type="checkbox"
+              value="3"
+              v-model="food.day"
+              id="defaultCheck2"
+            />
+            <label class="form-check-label" for="defaultCheck2">Thứ ba</label>
+            <br />
+            <input
+              class="form-check-input"
+              type="checkbox"
+              value="4"
+              v-model="food.day"
+              id="defaultCheck3"
+            />
+            <label class="form-check-label" for="defaultCheck3">Thứ tư</label>
+            <br />
+            <input
+              class="form-check-input"
+              type="checkbox"
+              value="5"
+              v-model="food.day"
+              id="defaultCheck4"
+            />
+            <label class="form-check-label" for="defaultCheck4">Thứ năm</label>
+            <br />
+            <input
+              class="form-check-input"
+              type="checkbox"
+              value="6"
+              v-model="food.day"
+              id="defaultCheck5"
+            />
+            <label class="form-check-label" for="defaultCheck5">Thứ sáu</label>
+            <br />
+            <input
+              class="form-check-input"
+              type="checkbox"
+              value="7"
+              v-model="food.day"
+              id="defaultCheck6"
+            />
+            <label class="form-check-label" for="defaultCheck6">Thứ bảy</label>
+            <br />
+            <input
+              class="form-check-input"
+              type="checkbox"
+              value="8"
+              v-model="food.day"
+              id="defaultCheck7"
+            />
+            <label class="form-check-label" for="defaultCheck7">Chủ nhật</label>
+            <br />
+            <br />
+          </div>
+          <input type="submit" value="Xong" class="btn btn-primary" />
+          <button class="btn btn-dark" style="margin-left:10px" @click="turnOffOverlay">Hủy</button>
+        </form>
       </div>
     </div>
   </div>
@@ -128,19 +133,39 @@ export default {
       this.foodClick = true;
       this.food = event;
     },
-    turnOffOverlay(){
+    turnOffOverlay() {
       this.foodClick = false;
     },
     updateFood() {
       // eslint-disable-next-line
-      this.$http
-        .put("/menu/update/" + this.food.id, this.food)
-        .then((result) => {
-          console.log(result);
-        })
-        .catch((err) => {
-          console.log(err);
-        });
+      this.$swal({
+        title: "Bạn có chắc?",
+        text: "Bạn sẽ không hồi phục được!",
+        icon: "warning",
+        showCancelButton: true,
+        confirmButtonColor: "#3085d6",
+        cancelButtonColor: "#d33",
+        confirmButtonText: "Thêm nó",
+        cancelButtonText: "Hủy",
+      }).then((result) => {
+        if (result.value) {
+          this.$http
+            .put("/menu/update/" + this.food.id, this.food)
+            .then(() => {
+              this.$swal(
+                "Đã sửa!",
+                this.food.name.toUpperCase() + " đã sửa",
+                "success"
+              ).then(() => {
+                this.turnOffOverlay();
+              });
+            })
+            .catch((err) => {
+              this.$swal("Lỗi", "", "error");
+              console.log(err);
+            });
+        }
+      });
     },
   },
   components: {
@@ -163,7 +188,6 @@ body {
   grid-template-columns: 200px 1fr;
   width: 100%;
   background: white;
-
 }
 
 #content {

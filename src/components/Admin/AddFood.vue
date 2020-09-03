@@ -12,7 +12,7 @@
           type="text"
           class="form-control"
           id="exampleFormControlInput3"
-          v-model="food.imgLink"
+          v-model="food.imageURL"
         />
       </div>
       <div class="form-group">
@@ -92,7 +92,13 @@
         <br />
       </div>
       <input type="submit" value="Xong" class="btn btn-primary" />
-      <input type="button" value="Hủy" class="btn btn-dark" style="margin-left:10px" @click="initFood">
+      <input
+        type="button"
+        value="Hủy"
+        class="btn btn-dark"
+        style="margin-left:10px"
+        @click="initFood"
+      />
     </form>
   </div>
 </template>
@@ -104,7 +110,7 @@ export default {
       food: {
         name: "",
         price: 0,
-        imgLink: "",
+        imageURL: "",
         day: [],
       },
     };
@@ -113,11 +119,10 @@ export default {
     initFood() {
       this.food.name = "";
       this.food.price = 0;
-      this.food.imgLink = "";
+      this.food.imageURL = "";
       this.food.day = [];
     },
     addFood() {
-      console.log(this.food);
       this.$swal({
         title: "Bạn có chắc?",
         text: "Bạn sẽ không hồi phục được!",
@@ -129,6 +134,8 @@ export default {
         cancelButtonText: "Hủy",
       }).then((result) => {
         if (result.value) {
+          if (this.food.price === 0) this.food.price = "Liên hệ";
+          if (this.food.imageURL === "") this.food.imageURL = "https://user-images.githubusercontent.com/194400/49531010-48dad180-f8b1-11e8-8d89-1e61320e1d82.png";
           this.$http
             .post("/menu/add", this.food)
             .then(() => {
@@ -136,7 +143,9 @@ export default {
                 "Đã thêm!",
                 this.food.name.toUpperCase() + " đã thêm",
                 "success"
-              );
+              ).then(() => {
+                this.initFood();
+              });
             })
             .catch((err) => {
               this.$swal("Lỗi", "", "error");

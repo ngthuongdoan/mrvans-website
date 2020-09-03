@@ -5,15 +5,14 @@
         <h4>ADMIN PAGE</h4>
       </div>
       <ul class="list-unstyled components">
-        <li>
-          <a @click="changeComponent('AddFood')">Thêm món</a>
+        <li @click="changeComponent($event,'AddFood')">
+          <a>Thêm món</a>
         </li>
-
-        <li>
-          <a @click="changeComponent('UpdateFood')">Sửa món</a>
+        <li @click="changeComponent($event,'UpdateFood')">
+          <a>Sửa món</a>
         </li>
-        <li>
-          <a @click="changeComponent('DeleteFood')">Xóa món</a>
+        <li @click="changeComponent($event,'DeleteFood')">
+          <a>Xóa món</a>
         </li>
       </ul>
     </nav>
@@ -23,12 +22,11 @@
 <script>
 export default {
   data() {
-    return {
-    };
+    return {};
   },
   methods: {
-    changeComponent(value) {
-      this.$emit("change-component", value)
+    changeComponent(event, value) {
+      this.$emit("change-component", value);
     },
   },
 };
@@ -115,7 +113,6 @@ ul.CTAs a {
 /* ---------------------------------------------------
     CONTENT STYLE
 ----------------------------------------------------- */
-
 
 /* ---------------------------------------------------
     MEDIAQUERIES

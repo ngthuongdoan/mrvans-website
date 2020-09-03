@@ -1,8 +1,9 @@
 <template>
   <footer>
     <address>
-      <h4>Địa chỉ: 236/3 Nguyễn Thái Bình, Phường 12, Quận Tân Bình, Hồ Chí Minh</h4>
-      <p id="phone">Hotline: 05 646464 99</p>
+      <p>Địa chỉ: 236/3 Hẽm 236 Nguyễn Thái Bình, Phường 12, Quận Tân Bình, Tp. Hồ Chí Minh</p>
+      <p >Đặt món ngay: 05 646464 99</p>
+      <p >Hotline CSKH: 03 6868 0611</p>
       <p id="email">
         Email:
         <a href="mailto:phumrvans@gmail.com">phumrvans@gmail.com</a>
@@ -42,12 +43,12 @@ footer {
   bottom: 0;
 }
 address {
+  margin-top: 5px;
   width: 100%;
-  p,
-  h4 {
+  line-height: inherit;
+  p{
     font-size: 1.5vh;
     margin-left: 10px;
-    margin-top: 5px;
     margin-bottom: 0;
   }
 }
@@ -55,6 +56,13 @@ address {
   a {
     font-style: italic;
     color: white;
+  }
+}
+@media only screen and (max-width: 420px) {
+  address{
+    p{
+      font-size: 9.5px;
+    }
   }
 }
 </style>

@@ -2,16 +2,15 @@ import Vue from "vue";
 import App from "@/App.vue";
 import axios from "axios";
 import VueSweetalert2 from 'vue-sweetalert2';
-import { BootstrapVue } from 'bootstrap-vue';
-
+import VTooltip from 'v-tooltip'
 
 import VueAxios from "vue-axios";
 import router from "./router/index";
 Vue.use(VueAxios, axios);
 Vue.use(VueSweetalert2);
-// Install BootstrapVue
-Vue.use(BootstrapVue)
+Vue.use(VTooltip)
 
+// Install BootstrapVue
 axios.defaults.baseURL = `https://mrvans2020.herokuapp.com/api`;
 
 Vue.config.productionTip = false;
