@@ -68,7 +68,6 @@ export default {
             })
             .catch((err) => {
               this.$swal("Lỗi", "", "error");
-              console.log(food);
               console.log(err);
             });
         }

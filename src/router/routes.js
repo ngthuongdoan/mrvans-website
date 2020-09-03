@@ -1,10 +1,39 @@
 import Main from "@/pages/Main.vue";
 import Admin from "@/pages/Admin.vue";
+import Swal from "sweetalert2";
+const SECRET_KEY = "N4U2mAkPqq";
 
 const routes = [
   { path: "/", component: Main },
-  { path: "/admin", component: Admin },
-  { path: "*", redirect: "/" }
+  {
+    path: "/admin",
+    component: Admin,
+    beforeEnter(to, from, next) {
+      Swal.fire({
+        title: "Submit your Secret Key",
+        input: "password",
+        confirmButtonText: "Submit",
+      }).then((result) => {
+        if (result.value === SECRET_KEY) {
+          Swal.fire({
+            title: "Welcome",
+            icon: "success",
+          }).then(() => {
+            next();
+          });
+          next();
+        } else {
+          Swal.fire({
+            title: "Wrong key",
+            icon: "error",
+          }).then(() => {
+            next("/");
+          });
+        }
+      });
+    },
+  },
+  { path: "*", redirect: "/" },
 ];
 
 /**
