@@ -37,6 +37,15 @@
               v-model="food.price"
             />
           </div>
+          <div class="form-group">
+            <label for="exampleFormControlInput3">Miêu tả</label>
+            <textarea
+              class="form-control"
+              id="exampleFormControlInput3"
+              rows="3"
+              v-model="food.description"
+            ></textarea>
+          </div>
           <label>Thứ:</label>
           <div class="form-check">
             <input
@@ -145,7 +154,7 @@ export default {
         showCancelButton: true,
         confirmButtonColor: "#3085d6",
         cancelButtonColor: "#d33",
-        confirmButtonText: "Thêm nó",
+        confirmButtonText: "Sửa nó",
         cancelButtonText: "Hủy",
       }).then((result) => {
         if (result.value) {
@@ -187,32 +196,28 @@ body {
   display: grid;
   grid-template-columns: 200px 1fr;
   width: 100%;
+  height: 100%;
   background: white;
 }
 
 #content {
   width: 100%;
-  min-height: 100vh;
+  height: 100%;
   transition: all 0.3s;
   align-content: center;
   justify-content: center;
-  form {
-    position: relative;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, 50%);
-  }
 }
 .overlay {
   position: absolute;
   width: 100%;
   height: 100%;
   background: rgba(0, 0, 0, 0.459);
+  overflow: auto;
   form {
     position: relative;
-    top: 50;
     left: 50%;
-    transform: translate(-50%, 10%);
+    height: 100%;
+    transform: translateX(-50%);
     width: 50%;
     background: white;
     border-radius: 10px;

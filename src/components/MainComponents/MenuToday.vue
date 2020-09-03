@@ -7,6 +7,7 @@
         :key="food.id"
         :name="food.name"
         :price="food.price"
+        :description="food.description"
         :imageURL="food.imageURL"
       ></app-food>
     </div>

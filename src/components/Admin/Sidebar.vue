@@ -43,7 +43,7 @@ export default {
 #sidebar {
   float: left;
   width: 200px;
-  height: 100vh;
+  height: 100%;
   margin: 0;
   background: #28292e;
   color: #fff;

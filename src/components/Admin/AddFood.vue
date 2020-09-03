@@ -24,6 +24,15 @@
           v-model="food.price"
         />
       </div>
+      <div class="form-group">
+        <label for="exampleFormControlInput3">Miêu tả</label>
+        <textarea
+          class="form-control"
+          id="exampleFormControlInput3"
+          rows="3"
+          v-model="food.description"
+        ></textarea>
+      </div>
       <label>Thứ:</label>
       <div class="form-check">
         <input
@@ -110,6 +119,7 @@ export default {
       food: {
         name: "",
         price: 0,
+        description: "",
         imageURL: "",
         day: [],
       },
@@ -119,6 +129,7 @@ export default {
     initFood() {
       this.food.name = "";
       this.food.price = 0;
+      this.food.description = "";
       this.food.imageURL = "";
       this.food.day = [];
     },
@@ -135,7 +146,9 @@ export default {
       }).then((result) => {
         if (result.value) {
           if (this.food.price === 0) this.food.price = "Liên hệ";
-          if (this.food.imageURL === "") this.food.imageURL = "https://user-images.githubusercontent.com/194400/49531010-48dad180-f8b1-11e8-8d89-1e61320e1d82.png";
+          if (this.food.imageURL === "")
+            this.food.imageURL =
+              "https://user-images.githubusercontent.com/194400/49531010-48dad180-f8b1-11e8-8d89-1e61320e1d82.png";
           this.$http
             .post("/menu/add", this.food)
             .then(() => {

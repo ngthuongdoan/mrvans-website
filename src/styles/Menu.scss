@@ -22,11 +22,12 @@
   text-align: left;
   float: left;
   height: 250px;
-  width: 250px;
-  margin: 10px;
+  width: 500px;
+  margin: 10px 20px;
+  display: grid;
+  grid-template-columns: 1fr 1fr ;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
   &-img {
-    height: 70%;
     width: 100%;
     background-size: cover;
     background-repeat: no-repeat;
@@ -44,14 +45,27 @@
     font-style: italic;
     font-size: 14px;
   }
+  &-description{
+    margin-left: 10px;
+    font-size: 14px;
+  }
 }
 @media screen and (max-height: 600px) {
   h1 {
     font-size: 18px;
+    
+  }
+  .food{
+    width: 400px;
+    height: 200px;
   }
 }
 @media screen and (max-width: 600px) {
   h1 {
     font-size: 18px;
+  }
+  .food{
+    width: 400px;
+    height: 200px;
   }
 }
