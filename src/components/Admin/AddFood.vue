@@ -7,12 +7,13 @@
         <input type="text" class="form-control" id="exampleFormControlInput1" v-model="food.name" />
       </div>
       <div class="form-group">
-        <label for="exampleFormControlInput3">Link ảnh:</label>
+        <label for="exampleFormControlInput3">Ảnh:</label>
         <input
-          type="text"
-          class="form-control"
+          type="file"
+          class="form-control-file"
           id="exampleFormControlInput3"
-          v-model="food.imageURL"
+          @change="addImage"
+          accept=".jpg, .png"
         />
       </div>
       <div class="form-group">
@@ -120,7 +121,7 @@ export default {
         name: "",
         price: 0,
         description: "",
-        imageURL: "",
+        image: "",
         day: [],
       },
     };
@@ -130,8 +131,23 @@ export default {
       this.food.name = "";
       this.food.price = 0;
       this.food.description = "";
-      this.food.imageURL = "";
+      this.food.image = "";
       this.food.day = [];
+    },
+    addImage(e) {
+      var files = e.target.files || e.dataTransfer.files;
+      if (!files.length) return;
+      this.createImage(files[0]);
+    },
+    createImage(file) {
+      // var image = new Image();
+      var reader = new FileReader();
+      var vm = this;
+
+      reader.onload = (e) => {
+        vm.food.image = e.target.result;
+      };
+      reader.readAsDataURL(file);
     },
     addFood() {
       this.$swal({
@@ -146,8 +162,8 @@ export default {
       }).then((result) => {
         if (result.value) {
           if (this.food.price === 0) this.food.price = "Liên hệ";
-          if (this.food.imageURL === "")
-            this.food.imageURL =
+          if (this.food.image === "")
+            this.food.image =
               "https://user-images.githubusercontent.com/194400/49531010-48dad180-f8b1-11e8-8d89-1e61320e1d82.png";
           this.$http
             .post("/menu/add", this.food)
@@ -164,6 +180,7 @@ export default {
               this.$swal("Lỗi", "", "error");
               console.log(err);
             });
+          // console.log(this.food)
         }
       });
     },

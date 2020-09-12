@@ -20,12 +20,13 @@
             />
           </div>
           <div class="form-group">
-            <label for="exampleFormControlInput3">Link ảnh:</label>
+            <label for="exampleFormControlInput3">Ảnh:</label>
             <input
-              type="text"
-              class="form-control"
+              type="file"
+              class="form-control-file"
               id="exampleFormControlInput3"
-              v-model="food.imageURL"
+              @change="addImage"
+              accept=".jpg, .png"
             />
           </div>
           <div class="form-group">
@@ -135,6 +136,21 @@ export default {
     };
   },
   methods: {
+    addImage(e) {
+      var files = e.target.files || e.dataTransfer.files;
+      if (!files.length) return;
+      this.createImage(files[0]);
+    },
+    createImage(file) {
+      // var image = new Image();
+      var reader = new FileReader();
+      var vm = this;
+
+      reader.onload = (e) => {
+        vm.food.image = e.target.result;
+      };
+      reader.readAsDataURL(file);
+    },
     updateComponent(value) {
       this.componentId = value;
     },

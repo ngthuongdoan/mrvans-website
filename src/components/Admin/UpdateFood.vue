@@ -16,7 +16,7 @@
           :name="food.name"
           :price="food.price"
           :description="food.description"
-          :imageURL="food.imageURL"
+          :image="food.image"
           @click.native="updateFood(food)"
         ></Food>
       </div>

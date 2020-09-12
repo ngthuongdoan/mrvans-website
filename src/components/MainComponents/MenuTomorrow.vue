@@ -6,7 +6,7 @@
       :key="food.id"
       :name="food.name"
       :price="food.price"
-      :imageURL="food.imageURL"
+      :image="food.image"
     ></app-food>
   </div>
 </template>
@@ -19,13 +19,19 @@ export default {
       const today = new Date();
       const tomorrow = new Date(today);
       tomorrow.setDate(tomorrow.getDate() + 1);
-      let dd = String(tomorrow.getDate()).padStart(2, "0");
-      let mm = String(tomorrow.getMonth() + 1).padStart(2, "0"); //January is 0!
-      let yyyy = tomorrow.getFullYear();
-      return dd + "/" + mm + "/" + yyyy;
+      const weekday = [
+        "Chủ nhật",
+        "Thứ hai",
+        "Thứ ba",
+        "Thứ tư",
+        "Thứ năm",
+        "Thứ sáu",
+        "Thứ bảy",
+      ];
+      return weekday[tomorrow.getDay()];
     };
     return {
-      title: `THỰC ĐƠN NGÀY ${getTomorrow()}`,
+      title: `THỰC ĐƠN ${getTomorrow().toUpperCase()}`,
       menu: [],
     };
   },

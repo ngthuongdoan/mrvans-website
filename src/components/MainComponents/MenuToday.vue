@@ -8,7 +8,7 @@
         :name="food.name"
         :price="food.price"
         :description="food.description"
-        :imageURL="food.imageURL"
+        :image="food.image"
       ></app-food>
     </div>
   </div>
@@ -20,13 +20,23 @@ export default {
   data() {
     const getToday = () => {
       let today = new Date();
-      let dd = String(today.getDate()).padStart(2, "0");
-      let mm = String(today.getMonth() + 1).padStart(2, "0"); //January is 0!
-      let yyyy = today.getFullYear();
-      return dd + "/" + mm + "/" + yyyy;
+      const weekday = [
+        "Chủ nhật",
+        "Thứ hai",
+        "Thứ ba",
+        "Thứ tư",
+        "Thứ năm",
+        "Thứ sáu",
+        "Thứ bảy",
+      ];
+      return weekday[today.getDay()];
+      // let dd = String(today.getDate()).padStart(2, "0");
+      // let mm = String(today.getMonth() + 1).padStart(2, "0"); //January is 0!
+      // let yyyy = today.getFullYear();
+      // return dd + "/" + mm + "/" + yyyy;
     };
     return {
-      title: `THỰC ĐƠN NGÀY ${getToday()}`,
+      title: `THỰC ĐƠN ${getToday().toUpperCase()}`,
       menu: [],
     };
   },

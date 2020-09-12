@@ -2,13 +2,20 @@
   <footer>
     <address>
       <p>Địa chỉ: 236/3 Hẽm 236 Nguyễn Thái Bình, Phường 12, Quận Tân Bình, Tp. Hồ Chí Minh</p>
-      <p >Đặt món ngay: 05 646464 99</p>
-      <p >Hotline CSKH: 03 6868 0611</p>
+      <p>Đặt món ngay: 05 646464 99</p>
+      <p>Hotline CSKH: 03 6868 0611</p>
       <p id="email">
         Email:
         <a href="mailto:phumrvans@gmail.com">phumrvans@gmail.com</a>
       </p>
     </address>
+    <div class="partner-container">
+      <ul>
+        <li class="partner">1</li>
+        <li class="partner">2</li>
+        <li class="partner">3</li>
+      </ul>
+    </div>
     <!-- Load Facebook SDK for JavaScript -->
     <div id="fb-root"></div>
     <div
@@ -30,7 +37,7 @@ export default {
       });
     };
   },
-}
+};
 </script>
 <style lang="scss">
 footer {
@@ -43,13 +50,27 @@ footer {
   bottom: 0;
 }
 address {
+  float: left;
   margin-top: 5px;
-  width: 100%;
+  display: block;
+  width: fit-content;
   line-height: inherit;
-  p{
+  p {
     font-size: 1.5vh;
     margin-left: 10px;
     margin-bottom: 0;
+  }
+}
+
+.partner-container {
+  position: relative;
+  ul {
+    list-style: none;
+    display: inline-flex;
+    margin-left: 500px;
+    li {
+      margin: 0 20px;
+    }
   }
 }
 #email {
@@ -59,8 +80,8 @@ address {
   }
 }
 @media only screen and (max-width: 420px) {
-  address{
-    p{
+  address {
+    p {
       font-size: 9.5px;
     }
   }
