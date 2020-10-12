@@ -42,7 +42,7 @@
             <label for="exampleFormControlInput3">Miêu tả</label>
             <textarea
               class="form-control"
-              id="exampleFormControlInput3"
+              id="exampleFormControlInput4"
               rows="3"
               v-model="food.description"
             ></textarea>
@@ -212,13 +212,13 @@ body {
   display: grid;
   grid-template-columns: 200px 1fr;
   width: 100%;
-  height: 100%;
+  height: 100vh;
   background: white;
 }
 
 #content {
   width: 100%;
-  height: 100%;
+  height: 100vh;
   transition: all 0.3s;
   align-content: center;
   justify-content: center;
@@ -226,7 +226,7 @@ body {
 .overlay {
   position: absolute;
   width: 100%;
-  height: 100%;
+  height: 100vh;
   background: rgba(0, 0, 0, 0.459);
   overflow: auto;
   form {

@@ -1,6 +1,7 @@
 <template>
   <div>
     <h1>Thêm món</h1>
+    <div class="form-container">
     <form @submit.prevent="addFood">
       <div class="form-group">
         <label for="exampleFormControlInput1">Tên</label>
@@ -29,7 +30,7 @@
         <label for="exampleFormControlInput3">Miêu tả</label>
         <textarea
           class="form-control"
-          id="exampleFormControlInput3"
+          id="exampleFormControlInput4"
           rows="3"
           v-model="food.description"
         ></textarea>
@@ -44,7 +45,6 @@
           id="defaultCheck1"
         />
         <label class="form-check-label" for="defaultCheck1">Thứ hai</label>
-        <br />
         <input
           class="form-check-input"
           type="checkbox"
@@ -53,7 +53,6 @@
           id="defaultCheck2"
         />
         <label class="form-check-label" for="defaultCheck2">Thứ ba</label>
-        <br />
         <input
           class="form-check-input"
           type="checkbox"
@@ -62,7 +61,6 @@
           id="defaultCheck3"
         />
         <label class="form-check-label" for="defaultCheck3">Thứ tư</label>
-        <br />
         <input
           class="form-check-input"
           type="checkbox"
@@ -71,7 +69,6 @@
           id="defaultCheck4"
         />
         <label class="form-check-label" for="defaultCheck4">Thứ năm</label>
-        <br />
         <input
           class="form-check-input"
           type="checkbox"
@@ -80,7 +77,6 @@
           id="defaultCheck5"
         />
         <label class="form-check-label" for="defaultCheck5">Thứ sáu</label>
-        <br />
         <input
           class="form-check-input"
           type="checkbox"
@@ -89,7 +85,6 @@
           id="defaultCheck6"
         />
         <label class="form-check-label" for="defaultCheck6">Thứ bảy</label>
-        <br />
         <input
           class="form-check-input"
           type="checkbox"
@@ -99,7 +94,7 @@
         />
         <label class="form-check-label" for="defaultCheck7">Chủ nhật</label>
         <br />
-        <br />
+        <br>
       </div>
       <input type="submit" value="Xong" class="btn btn-primary" />
       <input
@@ -110,6 +105,7 @@
         @click="initFood"
       />
     </form>
+    </div>
   </div>
 </template>
 
@@ -180,7 +176,6 @@ export default {
               this.$swal("Lỗi", "", "error");
               console.log(err);
             });
-          // console.log(this.food)
         }
       });
     },
@@ -190,4 +185,11 @@ export default {
 
 <style lang="scss">
 @import "../../../node_modules/bootstrap/scss/bootstrap";
+.form-container{
+  max-height: 100vh;
+  overflow: auto;
+  .form-check-label{
+    margin-right: 30px;
+  }
+}
 </style>

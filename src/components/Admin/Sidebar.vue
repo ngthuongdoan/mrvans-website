@@ -43,7 +43,7 @@ export default {
 #sidebar {
   float: left;
   width: 200px;
-  height: 100%;
+  height: 100vh;
   margin: 0;
   background: #28292e;
   color: #fff;
@@ -70,12 +70,11 @@ export default {
 
 #sidebar ul li a {
   cursor: pointer;
-  padding: 10px;
   font-size: 1.1em;
   display: block;
   color: white;
   text-decoration: none;
-  padding-left: 20px;
+  padding: 10px 10px 10px 20px;
 }
 
 #sidebar ul li a:hover {
