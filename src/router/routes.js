@@ -15,9 +15,6 @@ const routes = [
             input: "password",
             confirmButtonText: "Submit",
           });
-          console.log(result.value);
-          console.log(typeof result.value);
-
           await axios.post("/secret-key", result.value);
           Swal.fire({
             title: "Welcome",
