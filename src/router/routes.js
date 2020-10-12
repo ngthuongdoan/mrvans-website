@@ -1,8 +1,8 @@
 import Main from "@/pages/Main.vue";
 import Admin from "@/pages/Admin.vue";
 import Swal from "sweetalert2";
-// const SECRET_KEY = "N4U2mAkPqq";
-const SECRET_KEY = "tratiendi";
+const SECRET_KEY = "N4U2mAkPqq";
+// const SECRET_KEY = "tratiendi";
 const routes = [
   { path: "/", component: Main },
   {
