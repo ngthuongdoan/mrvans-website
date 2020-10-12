@@ -1,46 +1,49 @@
 import Main from "@/pages/Main.vue";
 import Admin from "@/pages/Admin.vue";
 import Swal from "sweetalert2";
-const SECRET_KEY = "N4U2mAkPqq";
-// const SECRET_KEY = "tratiendi";
+import axios from "axios";
+
 const routes = [
-  { path: "/", component: Main },
-  {
-    path: "/admin",
-    component: Admin,
-    beforeEnter(to, from, next) {
-      Swal.fire({
-        title: "Submit your Secret Key",
-        input: "password",
-        confirmButtonText: "Submit",
-      }).then((result) => {
-        if (result.value === SECRET_KEY) {
+    {path: "/", component: Main},
+    {
+      path: "/admin",
+      component: Admin,
+      async beforeEnter(to, from, next) {
+        try {
+          const result = await Swal.fire({
+            title: "Submit your Secret Key",
+            input: "password",
+            confirmButtonText: "Submit",
+          });
+          console.log(result.value);
+          console.log(typeof result.value);
+
+          await axios.post("/secret-key", result.value);
           Swal.fire({
             title: "Welcome",
             icon: "success",
-          }).then(() => {
-            next();
           });
           next();
-        } else {
-          Swal.fire({
-            title: "Wrong key",
+        } catch (e) {
+          await Swal.fire({
+            title: e.message,
             icon: "error",
-          }).then(() => {
-            next("/");
-          });
+          })
+          next("/admin");
         }
-      });
+      },
     },
-  },
-  { path: "*", redirect: "/" },
-];
+    {
+      path: "*", redirect: "/"
+    },
+  ]
+;
 
 /**
  * Asynchronously load view (Webpack Lazy loading compatible)
  * The specified component must be inside the Views folder
  * @param  {string} name  the filename (basename) of the view to load.
-function view(name) {
+ function view(name) {
    var res= require('../components/Dashboard/Views/' + name + '.vue');
    return res;
 };**/
